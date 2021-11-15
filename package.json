@@ -23,7 +23,7 @@
     "cors": "^2.8.4",
     "cql-exec-fhir": "^2.0.0",
     "cql-exec-vsac": "^1.2.1",
-    "cql-execution": "^2.2.0",
+    "cql-execution": "^2.3.3",
     "debug": "~2.6.0",
     "express": "^4.16.3",
     "fhirclient": "^2.3.11",
