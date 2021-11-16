@@ -4,21 +4,34 @@
   "title": "Screening for abdominal aortic aneurysm",
   "description": "Presents a United States Preventive Services Task Force (USPSTF) recommendation for screening for abdominal aortic aneurysm in men age 65-75 years who every smoked",
   "_config": {
-    "cards": [{
-      "conditionExpression": "InPopulation",
-      "card": {
-        "summary": "Screening for abdominal aortic aneurysm in men who ever smoked",
-        "indicator": "info",
-        "detail": "${Recommendation}",
-        "source": {
-          "label": "USPSTF Abdominal Aortic Aneurysm: Screening",
-          "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening"
-        },
-        "extension": {
-          "information": "${Information}"
+    "cards": [
+      {
+        "conditionExpression": "Notification",
+        "card": {
+          "summary": "Screening for abdominal aortic aneurysm in men who ever smoked",
+          "indicator": "info",
+          "detail": "${Notification}",
+          "source": {
+            "label": "USPSTF Abdominal Aortic Aneurysm: Screening",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening"
+          },
+          "extension": {
+            "information": "${Information}"
+          }
+        }
+      },
+      {
+        "conditionExpression": "TobaccoHistoryNeeded",
+        "card": {
+          "summary": "Smoking history needed.",
+          "indicator": "warning",
+          "detail": "${Information}",
+          "source": {
+            "label": "A tobacco history is needed to complete the AAA screening assessment."
+          }
         }
       }
-    }],
+    ],
     "cql": {
       "library": {
         "id": "USPSTF_Abdominal_Aortic_Aneurysm_Screening_FHIRv401",

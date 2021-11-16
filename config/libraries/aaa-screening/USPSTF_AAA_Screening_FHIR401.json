@@ -69,9 +69,25 @@
                "name" : "LOINC"
             }
          }, {
+            "name" : "Smoking status unknown",
+            "id" : "266927001",
+            "display" : "Tobacco smoking consumption unknown (finding)",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "name" : "SNOMED-CT"
+            }
+         }, {
             "name" : "Never smoker",
             "id" : "266919005",
             "display" : "Never smoked tobacco (finding)",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "name" : "SNOMED-CT"
+            }
+         }, {
+            "name" : "Former smoker",
+            "id" : "8517006",
+            "display" : "Ex-smoker (finding)",
             "accessLevel" : "Public",
             "codeSystem" : {
                "name" : "SNOMED-CT"
@@ -301,6 +317,127 @@
                }
             }
          }, {
+            "name" : "FormerSmoker",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "IsNull",
+                        "operand" : {
+                           "name" : "MostRecentValidSmokingStatus",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "name" : "MostRecentValidSmokingStatus",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "type" : "ToConcept",
+                     "operand" : {
+                        "name" : "Former smoker",
+                        "type" : "CodeRef"
+                     }
+                  } ]
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
+            }
+         }, {
+            "name" : "TobaccoHistoryNeeded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Or",
+               "operand" : [ {
+                  "type" : "IsNull",
+                  "operand" : {
+                     "name" : "MostRecentValidSmokingStatus",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "type" : "Equal",
+                  "operand" : [ {
+                     "name" : "MostRecentValidSmokingStatus",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "type" : "ToConcept",
+                     "operand" : {
+                        "name" : "Smoking status unknown",
+                        "type" : "CodeRef"
+                     }
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "IsEverSmoker",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "IsNull",
+                        "operand" : {
+                           "name" : "MostRecentValidSmokingStatus",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "Or",
+                  "operand" : [ {
+                     "type" : "InValueSet",
+                     "code" : {
+                        "name" : "MostRecentValidSmokingStatus",
+                        "type" : "ExpressionRef"
+                     },
+                     "valueset" : {
+                        "name" : "CurrentTobaccoSmoker",
+                        "type" : "ValueSetRef"
+                     }
+                  }, {
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "name" : "MostRecentValidSmokingStatus",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "type" : "ToConcept",
+                        "operand" : {
+                           "name" : "Former smoker",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  } ]
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
+            }
+         }, {
             "name" : "Included",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -309,39 +446,14 @@
                "operand" : [ {
                   "type" : "And",
                   "operand" : [ {
-                     "name" : "Is65Through75YearsOld",
+                     "name" : "IsMale",
                      "type" : "ExpressionRef"
                   }, {
-                     "type" : "AnyInValueSet",
-                     "codes" : {
-                        "type" : "Query",
-                        "source" : [ {
-                           "alias" : "X",
-                           "expression" : {
-                              "name" : "TobaccoSmokingStatus",
-                              "type" : "ExpressionRef"
-                           }
-                        } ],
-                        "return" : {
-                           "distinct" : false,
-                           "expression" : {
-                              "name" : "ToConcept",
-                              "libraryName" : "FHIRHelpers",
-                              "type" : "FunctionRef",
-                              "operand" : [ {
-                                 "name" : "X",
-                                 "type" : "AliasRef"
-                              } ]
-                           }
-                        }
-                     },
-                     "valueset" : {
-                        "name" : "CurrentTobaccoSmoker",
-                        "type" : "ValueSetRef"
-                     }
+                     "name" : "Is65Through75YearsOld",
+                     "type" : "ExpressionRef"
                   } ]
                }, {
-                  "name" : "IsMale",
+                  "name" : "IsEverSmoker",
                   "type" : "ExpressionRef"
                } ]
             }
@@ -507,7 +619,7 @@
                }
             }
          }, {
-            "name" : "HasRecentOrCompletedAbdominalAortaUltrasoundServiceRequest",
+            "name" : "HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
@@ -536,7 +648,7 @@
                   "name" : "HasHadAbdominalAortaUltrasound",
                   "type" : "ExpressionRef"
                }, {
-                  "name" : "HasRecentOrCompletedAbdominalAortaUltrasoundServiceRequest",
+                  "name" : "HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest",
                   "type" : "ExpressionRef"
                } ]
             }
@@ -573,7 +685,7 @@
                },
                "then" : {
                   "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                  "value" : "You need an abdominal aorta Ultrasound.",
+                  "value" : "You should have an abdominal aorta ultrasound.",
                   "type" : "Literal"
                },
                "else" : {
@@ -627,16 +739,13 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentValidSmokingStatus",
-                                 "type" : "ExpressionRef"
-                              }
+                              "name" : "TobaccoHistoryNeeded",
+                              "type" : "ExpressionRef"
                            }
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No smoking status is available.",
+                           "value" : "INFORMATION: Please record a tobacco history. Has this patient ever smoked?",
                            "type" : "Literal"
                         },
                         "else" : {

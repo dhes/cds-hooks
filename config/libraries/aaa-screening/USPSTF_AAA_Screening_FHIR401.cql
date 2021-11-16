@@ -23,7 +23,9 @@ valueset CurrentTobaccoSmoker: 'https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1
 
 // Individual codes
 code "Tobacco smoking status": '72166-2' from "LOINC" display 'Tobacco smoking status'
+code "Smoking status unknown": '266927001' from "SNOMED-CT" display 'Tobacco smoking consumption unknown (finding)'
 code "Never smoker": '266919005' from "SNOMED-CT" display 'Never smoked tobacco (finding)'
+code "Former smoker": '8517006' from "SNOMED-CT" display 'Ex-smoker (finding)'
 code "Ultrasound scan of abdominal aorta": '241462009' from  "SNOMED-CT" display 'Ultrasound scan of abdominal aorta (procedure)'
 
 // notes:
@@ -50,21 +52,41 @@ define IsMale:
   else null
 
 // <http://www.hl7.org/fhir/us/core/StructureDefinition-us-core-smokingstatus.html>
+// take most recent smoking status observation as the authoritative one
 define MostRecentValidSmokingStatus:
   C3F.ConceptValue(C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack([Observation: "Tobacco smoking status"], 6 years))))
 
+// for troubleshooting
 define TobaccoSmokingStatus:
   [Observation: "Tobacco smoking status"] S
   return S.value as CodeableConcept
-// define EverSmoked:
-//   if MostRecentValidSmokingStatus is not null  
-//     then any ValidSmokingStatus in CurrentTobaccoSmoker
-//   else null
+
+define FormerSmoker:
+  if MostRecentValidSmokingStatus is not null
+    then MostRecentValidSmokingStatus = "Former smoker"
+  else null
+
+define TobaccoHistoryNeeded:
+  MostRecentValidSmokingStatus is null or
+  MostRecentValidSmokingStatus = "Smoking status unknown"
+
+define IsEverSmoker:
+  if MostRecentValidSmokingStatus is not null  
+    then 
+      MostRecentValidSmokingStatus in CurrentTobaccoSmoker
+      or MostRecentValidSmokingStatus = "Former smoker"
+  else null
+
+// redundant because we assume the most recent history is the most accurate
+// define TobaccoHistoryIsInconsistent:
+// TobaccoSmokingStatus in CurrentTobaccoSmoker and NeverSmoker
+// or
+// TobaccoSmokingStatus in CurrentTobaccoSmoker and FormerSmoker
 
 define Included:
-  Is65Through75YearsOld
-  and TobaccoSmokingStatus in CurrentTobaccoSmoker
-  and IsMale
+  IsMale
+  and Is65Through75YearsOld
+  and IsEverSmoker
 
 // Exclusions
 
@@ -93,7 +115,7 @@ define CompletedAbdominalAortaUltrasoundServiceRequest:
   [ServiceRequest: "Ultrasound scan of abdominal aorta"] R
           where R.status.value = 'completed'
 
-define HasRecentOrCompletedAbdominalAortaUltrasoundServiceRequest:
+define HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest:
   Exists(   RecentAbdominalAortaUltrasoundServiceRequest) or
   Exists(CompletedAbdominalAortaUltrasoundServiceRequest)
 
@@ -108,7 +130,7 @@ define Excluded:
   // HasAAA or // to do
   // HasHadAaaRepair // to do
   HasHadAbdominalAortaUltrasound or 
-  HasRecentOrCompletedAbdominalAortaUltrasoundServiceRequest
+  HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest
 
 define InPopulation:
 //  Included and not Excluded // to do
@@ -116,7 +138,7 @@ define InPopulation:
 
 define Notification:
   if InPopulation then
-'You need an abdominal aorta Ultrasound.'
+'You should have an abdominal aorta ultrasound.'
   else
     null
 
@@ -132,7 +154,8 @@ Here are some links to resources to help you get started:
 
  define Information: // to do
    (List{ // to do - there's more
-     if (MostRecentValidSmokingStatus is null) then 
-     'INFORMATION: No smoking status is available.'
+     if TobaccoHistoryNeeded  
+     then 
+      'INFORMATION: Please record a tobacco history. Has this patient ever smoked?'
      else null
    }) W where W is not null
