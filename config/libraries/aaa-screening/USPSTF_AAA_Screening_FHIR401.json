@@ -57,6 +57,10 @@
             "name" : "CurrentTobaccoSmoker",
             "id" : "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.2390",
             "accessLevel" : "Public"
+         }, {
+            "name" : "Has AAA",
+            "id" : "https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.17",
+            "accessLevel" : "Public"
          } ]
       },
       "codes" : {
@@ -96,6 +100,14 @@
             "name" : "Ultrasound scan of abdominal aorta",
             "id" : "241462009",
             "display" : "Ultrasound scan of abdominal aorta (procedure)",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "name" : "SNOMED-CT"
+            }
+         }, {
+            "name" : "Had AAA repair",
+            "id" : "429205001",
+            "display" : "History of repair of aneurysm of abdominal aorta (situation)",
             "accessLevel" : "Public",
             "codeSystem" : {
                "name" : "SNOMED-CT"
@@ -458,6 +470,45 @@
                } ]
             }
          }, {
+            "name" : "HasAAA",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Exists",
+               "operand" : {
+                  "dataType" : "{http://hl7.org/fhir}Condition",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                  "codeProperty" : "code",
+                  "codeComparator" : "in",
+                  "type" : "Retrieve",
+                  "codes" : {
+                     "name" : "Has AAA",
+                     "type" : "ValueSetRef"
+                  }
+               }
+            }
+         }, {
+            "name" : "HadAaaRepair",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Exists",
+               "operand" : {
+                  "dataType" : "{http://hl7.org/fhir}Condition",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+                  "codeProperty" : "code",
+                  "codeComparator" : "~",
+                  "type" : "Retrieve",
+                  "codes" : {
+                     "type" : "ToList",
+                     "operand" : {
+                        "name" : "Had AAA repair",
+                        "type" : "CodeRef"
+                     }
+                  }
+               }
+            }
+         }, {
             "name" : "AbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -499,7 +550,7 @@
                }
             }
          }, {
-            "name" : "HasHadAbdominalAortaUltrasound",
+            "name" : "HadAbdominalAortaUltrasound",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
@@ -645,8 +696,20 @@
             "expression" : {
                "type" : "Or",
                "operand" : [ {
-                  "name" : "HasHadAbdominalAortaUltrasound",
-                  "type" : "ExpressionRef"
+                  "type" : "Or",
+                  "operand" : [ {
+                     "type" : "Or",
+                     "operand" : [ {
+                        "name" : "HasAAA",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "name" : "HadAaaRepair",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "name" : "HadAbdominalAortaUltrasound",
+                     "type" : "ExpressionRef"
+                  } ]
                }, {
                   "name" : "HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest",
                   "type" : "ExpressionRef"
