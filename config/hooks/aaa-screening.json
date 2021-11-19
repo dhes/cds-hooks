@@ -3,6 +3,13 @@
   "hook": "patient-view",
   "title": "Screening for abdominal aortic aneurysm",
   "description": "Presents a United States Preventive Services Task Force (USPSTF) recommendation for screening for abdominal aortic aneurysm in men age 65-75 years who every smoked",
+  "prefetch": {
+    "Patient": "Patient/{{context.patientId}}",
+    "Procedure": "Procedure?patient={{context.patientId}}",
+    "Condition": "Condition?patient={{context.patientId}}",
+    "ServiceRequest": "ServiceRequest?patient={{context.patientId}}",
+    "Observation": "Observation?patient={{context.patientId}}&code=72166-2&_count=1&sort:desc=date"
+  },
   "_config": {
     "cards": [
       {
