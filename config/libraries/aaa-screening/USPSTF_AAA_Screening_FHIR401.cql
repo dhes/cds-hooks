@@ -71,7 +71,7 @@ define FormerSmoker:
 
 define TobaccoHistoryNeeded:
   MostRecentValidSmokingStatus is null or
-  MostRecentValidSmokingStatus = "Smoking status unknown"
+  MostRecentValidSmokingStatus ~ "Smoking status unknown"
 
 define IsEverSmoker:
   if MostRecentValidSmokingStatus is not null  
@@ -152,9 +152,9 @@ Here are some links to resources to help you get started:
     null
 
  define Information: // to do
-   (List{ // to do - there's more
+   //(List{ // to do - there may be more
      if TobaccoHistoryNeeded  
      then 
       'INFORMATION: Please record a tobacco history. Has this patient ever smoked?'
      else null
-   }) W where W is not null
+   //}) W where W is not null

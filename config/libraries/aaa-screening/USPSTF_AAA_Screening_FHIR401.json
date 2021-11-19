@@ -382,7 +382,7 @@
                      "type" : "ExpressionRef"
                   }
                }, {
-                  "type" : "Equal",
+                  "type" : "Equivalent",
                   "operand" : [ {
                      "name" : "MostRecentValidSmokingStatus",
                      "type" : "ExpressionRef"
@@ -791,45 +791,25 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "Query",
-               "source" : [ {
-                  "alias" : "W",
-                  "expression" : {
-                     "type" : "List",
-                     "element" : [ {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "name" : "TobaccoHistoryNeeded",
-                              "type" : "ExpressionRef"
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: Please record a tobacco history. Has this patient ever smoked?",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     } ]
-                  }
-               } ],
-               "relationship" : [ ],
-               "where" : {
-                  "type" : "Not",
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "type" : "IsNull",
-                     "operand" : {
-                        "name" : "W",
-                        "type" : "AliasRef"
-                     }
+                     "name" : "TobaccoHistoryNeeded",
+                     "type" : "ExpressionRef"
+                  }
+               },
+               "then" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "INFORMATION: Please record a tobacco history. Has this patient ever smoked?",
+                  "type" : "Literal"
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
                   }
                }
             }
