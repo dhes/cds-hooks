@@ -21,8 +21,8 @@
     }],
     "cql": {
       "library": {
-        "id": "Million_Hearts_Baseline_10_Year_ASCVD_Risk_FHIRv102",
-        "version": "1.0.2"
+        "id": "Million_Hearts_Baseline_10_Year_ASCVD_Risk_FHIRv401",
+        "version": "1.0.0"
       }
     }
   }
