@@ -450,6 +450,9 @@ define Errors:
 define AllErrors:
   Combine(Errors, '\n\r')
 
+define InDemographicAndHasErrors:
+  InDemographic and Exists(Errors)
+
 // The list of pertinent warning messages related to:
 // - using equations for Whites when the patient's race is other than White or African American / Black
 // - adjusting test results when they are outside of the allowable range for the CDS

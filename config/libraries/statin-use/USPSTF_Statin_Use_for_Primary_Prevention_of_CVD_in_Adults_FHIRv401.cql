@@ -162,6 +162,9 @@ define Errors:
       {'WARNING: Adequate data to process CDS, but one of the following items is missing or more than 6 years old: LDL, HDL, smoking status, or CVD risk score.'}
   else null
 
+define InPopulationAndHasErrors:
+  InPopulation and Exists(Errors)
+
 // These expressions are defined to simplify exposure to SharedLogic resources
 define HasCVDRiskFactors:
   SharedLogic.HasCVDRiskFactors

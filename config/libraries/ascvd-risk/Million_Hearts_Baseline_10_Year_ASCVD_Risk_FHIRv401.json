@@ -2872,6 +2872,23 @@
                }
             }
          }, {
+            "name" : "InDemographicAndHasErrors",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "And",
+               "operand" : [ {
+                  "name" : "InDemographic",
+                  "type" : "ExpressionRef"
+               }, {
+                  "type" : "Exists",
+                  "operand" : {
+                     "name" : "Errors",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
+            }
+         }, {
             "name" : "Warnings",
             "context" : "Patient",
             "accessLevel" : "Public",

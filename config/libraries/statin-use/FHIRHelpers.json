@@ -31,10 +31,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "period",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "period",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {
@@ -53,13 +57,17 @@
                "else" : {
                   "type" : "If",
                   "condition" : {
-                     "type" : "IsNull",
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
                      "operand" : {
-                        "path" : "start",
-                        "type" : "Property",
-                        "source" : {
-                           "name" : "period",
-                           "type" : "OperandRef"
+                        "type" : "IsNull",
+                        "operand" : {
+                           "path" : "start",
+                           "type" : "Property",
+                           "source" : {
+                              "name" : "period",
+                              "type" : "OperandRef"
+                           }
                         }
                      }
                   },
@@ -967,10 +975,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "quantity",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "quantity",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {
@@ -1143,10 +1155,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "ratio",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "ratio",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {
@@ -1205,10 +1221,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "range",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "range",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {
@@ -1269,10 +1289,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "coding",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "coding",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {
@@ -1359,10 +1383,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "concept",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "concept",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {

@@ -140,12 +140,16 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "Not",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "type" : "IsTrue",
+                     "type" : "Not",
                      "operand" : {
-                        "name" : "InPopulation",
-                        "type" : "ExpressionRef"
+                        "type" : "IsTrue",
+                        "operand" : {
+                           "name" : "InPopulation",
+                           "type" : "ExpressionRef"
+                        }
                      }
                   }
                },
@@ -176,12 +180,16 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "Not",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "type" : "IsTrue",
+                     "type" : "Not",
                      "operand" : {
-                        "name" : "InPopulation",
-                        "type" : "ExpressionRef"
+                        "type" : "IsTrue",
+                        "operand" : {
+                           "name" : "InPopulation",
+                           "type" : "ExpressionRef"
+                        }
                      }
                   }
                },
@@ -383,17 +391,25 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "name" : "HasMissingOrOldData",
-                  "libraryName" : "SharedLogic",
-                  "type" : "ExpressionRef"
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "name" : "HasMissingOrOldData",
+                     "libraryName" : "SharedLogic",
+                     "type" : "ExpressionRef"
+                  }
                },
                "then" : {
                   "type" : "If",
                   "condition" : {
-                     "type" : "IsNull",
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
                      "operand" : {
-                        "name" : "Recommendation",
-                        "type" : "ExpressionRef"
+                        "type" : "IsNull",
+                        "operand" : {
+                           "name" : "Recommendation",
+                           "type" : "ExpressionRef"
+                        }
                      }
                   },
                   "then" : {
@@ -426,6 +442,23 @@
                      }
                   }
                }
+            }
+         }, {
+            "name" : "InPopulationAndHasErrors",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "And",
+               "operand" : [ {
+                  "name" : "InPopulation",
+                  "type" : "ExpressionRef"
+               }, {
+                  "type" : "Exists",
+                  "operand" : {
+                     "name" : "Errors",
+                     "type" : "ExpressionRef"
+                  }
+               } ]
             }
          }, {
             "name" : "HasCVDRiskFactors",

@@ -153,10 +153,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "period",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "period",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {
@@ -217,10 +221,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "range",
-                     "type" : "OperandRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "range",
+                        "type" : "OperandRef"
+                     }
                   }
                },
                "then" : {

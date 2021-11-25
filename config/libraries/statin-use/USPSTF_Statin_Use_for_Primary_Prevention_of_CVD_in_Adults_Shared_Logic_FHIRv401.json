@@ -647,10 +647,14 @@
             "expression" : {
                "type" : "If",
                "condition" : {
-                  "type" : "IsNull",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
-                     "name" : "MostRecentValidSmokingStatus",
-                     "type" : "ExpressionRef"
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "MostRecentValidSmokingStatus",
+                        "type" : "ExpressionRef"
+                     }
                   }
                },
                "then" : {

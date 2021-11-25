@@ -21,7 +21,7 @@
       }
     },
     {
-      "conditionExpression": "Errors",
+      "conditionExpression": "InPopulationAndHasErrors",
       "card": {
         "summary": "Information needed.",
         "indicator": "warning",
