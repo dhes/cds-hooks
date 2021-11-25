@@ -561,24 +561,6 @@
                }
             }
          }, {
-            "name" : "AbdominalAortaUltrasoundServiceRequest",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "dataType" : "{http://hl7.org/fhir}ServiceRequest",
-               "templateId" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
-               "codeProperty" : "code",
-               "codeComparator" : "~",
-               "type" : "Retrieve",
-               "codes" : {
-                  "type" : "ToList",
-                  "operand" : {
-                     "name" : "Ultrasound scan of abdominal aorta",
-                     "type" : "CodeRef"
-                  }
-               }
-            }
-         }, {
             "name" : "RecentAbdominalAortaUltrasoundServiceRequest",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -731,6 +713,38 @@
                      "type" : "ExpressionRef"
                   }
                } ]
+            }
+         }, {
+            "name" : "InPopulationAndTobaccoHistoryNeeded",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "And",
+               "operand" : [ {
+                  "name" : "InPopulation",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "TobaccoHistoryNeeded",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "AbdominalAortaUltrasoundServiceRequest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}ServiceRequest",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+               "codeProperty" : "code",
+               "codeComparator" : "~",
+               "type" : "Retrieve",
+               "codes" : {
+                  "type" : "ToList",
+                  "operand" : {
+                     "name" : "Ultrasound scan of abdominal aorta",
+                     "type" : "CodeRef"
+                  }
+               }
             }
          }, {
             "name" : "Notification",

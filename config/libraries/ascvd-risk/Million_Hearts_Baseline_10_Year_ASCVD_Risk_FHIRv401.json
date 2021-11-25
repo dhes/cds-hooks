@@ -2691,7 +2691,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: race is missing.",
+                           "value" : "- Race ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2730,7 +2730,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: gender is missing or is other than male / female.",
+                           "value" : "- Gender (male / female) ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2755,7 +2755,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: total cholesterol result is missing or more than six years old.",
+                           "value" : "- Total cholesterol within the last six years ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2780,7 +2780,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: HDL result is missing or more than six years old.",
+                           "value" : "- HDL cholesterol within the last six years ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2805,7 +2805,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: systolic blood pressure result is missing or more than six years old.",
+                           "value" : "- Systolic blood pressure within the last six years ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2830,7 +2830,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: smoking status is missing or more than one year old.",
+                           "value" : "- Smoking status within the last year ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2853,6 +2853,22 @@
                         "type" : "AliasRef"
                      }
                   }
+               }
+            }
+         }, {
+            "name" : "AllErrors",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Combine",
+               "source" : {
+                  "name" : "Errors",
+                  "type" : "ExpressionRef"
+               },
+               "separator" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "\n\r",
+                  "type" : "Literal"
                }
             }
          }, {

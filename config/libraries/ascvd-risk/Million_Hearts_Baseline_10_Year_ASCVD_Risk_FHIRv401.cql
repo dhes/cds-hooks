@@ -423,29 +423,32 @@ define Errors:
     else null,
     // Patient must have a recorded race to determine the correct calculation parameters.
     if Race is null then
-      'ERROR: Inadequate data to process CDS: race is missing.'
+      '- Race '
     else null,
     // Patient must have a recorded gender, either male or female, to determine the correct calculation parameters.
     if Patient.gender.value is null or IsOtherGender then
-      'ERROR: Inadequate data to process CDS: gender is missing or is other than male / female.'
+      '- Gender (male / female) '
     else null,
     // Patient must have a recorded total cholesterol result in the last six years to use for calculation.
     if MostRecentValidTotalCholesterolResult is null then
-      'ERROR: Inadequate data to process CDS: total cholesterol result is missing or more than six years old.'
+      '- Total cholesterol within the last six years '
     else null,
     // Patient must have a recorded HDL result in the last six years to use for calculation.
     if MostRecentValidHDLResult is null then
-      'ERROR: Inadequate data to process CDS: HDL result is missing or more than six years old.'
+      '- HDL cholesterol within the last six years '
     else null,
     // Patient must have a recorded systolic blood pressure result in the last six years to use for calculation.
     if MostRecentValidSystolicBPResult is null then
-      'ERROR: Inadequate data to process CDS: systolic blood pressure result is missing or more than six years old.'
+      '- Systolic blood pressure within the last six years '
     else null,
     // Patient must have a recorded smoking status in the last year to use for calculation.
     if IsSmoker is null then
-      'ERROR: Inadequate data to process CDS: smoking status is missing or more than one year old.'
+      '- Smoking status within the last year '
     else null
   }) E where E is not null
+
+define AllErrors:
+  Combine(Errors, '\n\r')
 
 // The list of pertinent warning messages related to:
 // - using equations for Whites when the patient's race is other than White or African American / Black

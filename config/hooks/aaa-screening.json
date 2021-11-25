@@ -28,7 +28,7 @@
         }
       },
       {
-        "conditionExpression": "TobaccoHistoryNeeded",
+        "conditionExpression": "InPopulationAndTobaccoHistoryNeeded",
         "card": {
           "summary": "Smoking history needed.",
           "indicator": "warning",

@@ -19,11 +19,22 @@
           "rationale": "${Rationale}"
         }
       }
+    },
+    {
+      "conditionExpression": "Errors",
+      "card": {
+        "summary": "Information needed.",
+        "indicator": "warning",
+        "detail": "${Errors}",
+        "source": {
+          "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
+        }
+      }
     }],
     "cql": {
       "library": {
-        "id": "USPSTF_Statin_Use_for_Primary_Prevention_of_CVD_in_Adults_FHIRv102",
-        "version": "1.1.0"
+        "id": "USPSTF_Statin_Use_for_Primary_Prevention_of_CVD_in_Adults_FHIRv401",
+        "version": "1.0.0"
       }
     }
   }
