@@ -20,11 +20,10 @@
       }
     },
     {
-      "conditionExpression": "InPopulationAndHasErrors",
       "card": {
         "summary": "Information needed.",
         "indicator": "warning",
-        "detail": "${Errors}",
+        "detail": "${NeedMoreInformation}",
         "source": {
           "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
         }

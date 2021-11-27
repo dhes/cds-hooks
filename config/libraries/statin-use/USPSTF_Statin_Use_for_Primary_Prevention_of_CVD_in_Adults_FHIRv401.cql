@@ -222,3 +222,13 @@ define OnStatinTherapy:
 
 define HasRhabdomyolysis:
   SharedLogic.HasRhabdomyolysis
+
+// Set up a list of needed information for card 2
+define NeedMoreInformation: 
+  Combine(List{
+    if Patient.name.family is null then '- Surname' else 'Familhy Name',
+    if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol' else null, 
+    if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol' else null,
+    if SharedLogic.IsSmoker is null then '- Tobacco smoking status' else null, 
+    if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null then '- ASCVD Risk Assessment' else null
+  },'\n\r')
