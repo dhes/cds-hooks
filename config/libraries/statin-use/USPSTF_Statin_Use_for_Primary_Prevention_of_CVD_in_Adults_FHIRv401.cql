@@ -162,8 +162,8 @@ define Errors:
       {'WARNING: Adequate data to process CDS, but one of the following items is missing or more than 6 years old: LDL, HDL, smoking status, or CVD risk score.'}
   else null
 
-define InPopulationAndHasErrors:
-  InPopulation and Exists(Errors)
+define InDemographicAndHasErrors:
+  SharedLogic.InDemographic and Exists(Errors)
 
 // These expressions are defined to simplify exposure to SharedLogic resources
 define HasCVDRiskFactors:
@@ -226,7 +226,6 @@ define HasRhabdomyolysis:
 // Set up a list of needed information for card 2
 define NeedMoreInformation: 
   Combine(List{
-    if Patient.name.family is null then '- Surname' else 'Familhy Name',
     if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol' else null, 
     if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol' else null,
     if SharedLogic.IsSmoker is null then '- Tobacco smoking status' else null, 

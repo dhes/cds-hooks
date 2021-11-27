@@ -444,13 +444,14 @@
                }
             }
          }, {
-            "name" : "InPopulationAndHasErrors",
+            "name" : "InDemographicAndHasErrors",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
                "type" : "And",
                "operand" : [ {
-                  "name" : "InPopulation",
+                  "name" : "InDemographic",
+                  "libraryName" : "SharedLogic",
                   "type" : "ExpressionRef"
                }, {
                   "type" : "Exists",
@@ -661,64 +662,6 @@
                "source" : {
                   "type" : "List",
                   "element" : [ {
-                     "type" : "If",
-                     "condition" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "IsNull",
-                           "operand" : {
-                              "type" : "Query",
-                              "source" : [ {
-                                 "alias" : "$this",
-                                 "expression" : {
-                                    "path" : "name",
-                                    "type" : "Property",
-                                    "source" : {
-                                       "name" : "Patient",
-                                       "type" : "ExpressionRef"
-                                    }
-                                 }
-                              } ],
-                              "where" : {
-                                 "type" : "Not",
-                                 "operand" : {
-                                    "type" : "IsNull",
-                                    "operand" : {
-                                       "path" : "family",
-                                       "type" : "Property",
-                                       "source" : {
-                                          "name" : "$this",
-                                          "type" : "AliasRef"
-                                       }
-                                    }
-                                 }
-                              },
-                              "return" : {
-                                 "distinct" : false,
-                                 "expression" : {
-                                    "path" : "family",
-                                    "type" : "Property",
-                                    "source" : {
-                                       "name" : "$this",
-                                       "type" : "AliasRef"
-                                    }
-                                 }
-                              }
-                           }
-                        }
-                     },
-                     "then" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- Surname",
-                        "type" : "Literal"
-                     },
-                     "else" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "Familhy Name",
-                        "type" : "Literal"
-                     }
-                  }, {
                      "type" : "If",
                      "condition" : {
                         "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
