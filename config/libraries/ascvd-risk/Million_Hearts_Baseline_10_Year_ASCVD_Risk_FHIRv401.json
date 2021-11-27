@@ -2830,7 +2830,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "- Smoking status within the last year ",
+                           "value" : "- Tobacco smoking status within the last year ",
                            "type" : "Literal"
                         },
                         "else" : {

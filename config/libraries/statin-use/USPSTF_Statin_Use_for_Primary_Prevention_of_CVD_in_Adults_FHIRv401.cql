@@ -226,8 +226,17 @@ define HasRhabdomyolysis:
 // Set up a list of needed information for card 2
 define NeedMoreInformation: 
   Combine(List{
-    if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol' else null, 
-    if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol' else null,
-    if SharedLogic.IsSmoker is null then '- Tobacco smoking status' else null, 
-    if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null then '- ASCVD Risk Assessment' else null
+    if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol within the last six years' else null, 
+    if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol within the last six years' else null,
+    if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null then '- ASCVD Risk Assessment within the last six years' else null,
+    if SharedLogic.IsSmoker is null then '- Tobacco smoking status within the last year' else null
   },'\n\r')
+
+// for hook card conditionExpression
+// I only want to see a card if action is needed
+define YesRecommendation:
+  case
+    when ShouldStartStatin then 'Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider'
+    when ShouldDiscussStatin then 'Discuss initiation of low to moderate intensity lipid lowering therapy'
+    else null
+  end

@@ -677,7 +677,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- LDL cholesterol",
+                        "value" : "- LDL cholesterol within the last six years",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -703,33 +703,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- HDL cholesterol",
-                        "type" : "Literal"
-                     },
-                     "else" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}String",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        }
-                     }
-                  }, {
-                     "type" : "If",
-                     "condition" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "IsNull",
-                           "operand" : {
-                              "name" : "IsSmoker",
-                              "libraryName" : "SharedLogic",
-                              "type" : "ExpressionRef"
-                           }
-                        }
-                     },
-                     "then" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- Tobacco smoking status",
+                        "value" : "- HDL cholesterol within the last six years",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -755,7 +729,33 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- ASCVD Risk Assessment",
+                        "value" : "- ASCVD Risk Assessment within the last six years",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "IsSmoker",
+                              "libraryName" : "SharedLogic",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- Tobacco smoking status within the last year",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -771,6 +771,41 @@
                   "valueType" : "{urn:hl7-org:elm-types:r1}String",
                   "value" : "\n\r",
                   "type" : "Literal"
+               }
+            }
+         }, {
+            "name" : "YesRecommendation",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Case",
+               "caseItem" : [ {
+                  "when" : {
+                     "name" : "ShouldStartStatin",
+                     "type" : "ExpressionRef"
+                  },
+                  "then" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider",
+                     "type" : "Literal"
+                  }
+               }, {
+                  "when" : {
+                     "name" : "ShouldDiscussStatin",
+                     "type" : "ExpressionRef"
+                  },
+                  "then" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "Discuss initiation of low to moderate intensity lipid lowering therapy",
+                     "type" : "Literal"
+                  }
+               } ],
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
                }
             }
          } ]

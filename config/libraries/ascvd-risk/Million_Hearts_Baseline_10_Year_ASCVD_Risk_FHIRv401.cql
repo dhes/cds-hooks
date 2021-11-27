@@ -443,7 +443,7 @@ define Errors:
     else null,
     // Patient must have a recorded smoking status in the last year to use for calculation.
     if IsSmoker is null then
-      '- Smoking status within the last year '
+      '- Tobacco smoking status within the last year '
     else null
   }) E where E is not null
 

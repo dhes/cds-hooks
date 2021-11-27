@@ -24,7 +24,7 @@
       {
         "conditionExpression": "InDemographic",
         "card": {
-          "summary": "More information needed to complete 10-Year ASCVD risk assessment. ",
+          "summary": "More information needed to complete 10-Year ASCVD risk assessment",
           "indicator": "warning",
           "detail": "${AllErrors}",
           "source": {
