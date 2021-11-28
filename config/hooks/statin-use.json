@@ -21,7 +21,7 @@
       }
     },
     {
-      "conditionExpression": "InDemographicAndHasErrors",
+      "conditionExpression": "NeedMoreInformation",
       "card": {
         "summary": "More information needed to complete Statin Use assessment",
         "indicator": "warning",

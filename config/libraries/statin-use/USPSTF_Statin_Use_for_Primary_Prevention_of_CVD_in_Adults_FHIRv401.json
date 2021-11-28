@@ -658,119 +658,137 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "Combine",
-               "source" : {
-                  "type" : "List",
-                  "element" : [ {
-                     "type" : "If",
-                     "condition" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "IsNull",
-                           "operand" : {
-                              "name" : "MostRecentValidLDLResult",
-                              "libraryName" : "SharedLogic",
-                              "type" : "ExpressionRef"
-                           }
-                        }
-                     },
-                     "then" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- LDL cholesterol within the last six years",
-                        "type" : "Literal"
-                     },
-                     "else" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}String",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        }
-                     }
-                  }, {
-                     "type" : "If",
-                     "condition" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "IsNull",
-                           "operand" : {
-                              "name" : "MostRecentValidHDLResult",
-                              "libraryName" : "SharedLogic",
-                              "type" : "ExpressionRef"
-                           }
-                        }
-                     },
-                     "then" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- HDL cholesterol within the last six years",
-                        "type" : "Literal"
-                     },
-                     "else" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}String",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        }
-                     }
-                  }, {
-                     "type" : "If",
-                     "condition" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "IsNull",
-                           "operand" : {
-                              "name" : "MostRecentValidCVDRiskAssessmentResult",
-                              "libraryName" : "SharedLogic",
-                              "type" : "ExpressionRef"
-                           }
-                        }
-                     },
-                     "then" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- ASCVD Risk Assessment within the last six years",
-                        "type" : "Literal"
-                     },
-                     "else" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}String",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        }
-                     }
-                  }, {
-                     "type" : "If",
-                     "condition" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "IsNull",
-                           "operand" : {
-                              "name" : "IsSmoker",
-                              "libraryName" : "SharedLogic",
-                              "type" : "ExpressionRef"
-                           }
-                        }
-                     },
-                     "then" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- Tobacco smoking status within the last year",
-                        "type" : "Literal"
-                     },
-                     "else" : {
-                        "asType" : "{urn:hl7-org:elm-types:r1}String",
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        }
-                     }
-                  } ]
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "name" : "InDemographicAndHasErrors",
+                     "type" : "ExpressionRef"
+                  }
                },
-               "separator" : {
-                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                  "value" : "\n",
-                  "type" : "Literal"
+               "then" : {
+                  "type" : "Combine",
+                  "source" : {
+                     "type" : "List",
+                     "element" : [ {
+                        "type" : "If",
+                        "condition" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "IsNull",
+                              "operand" : {
+                                 "name" : "MostRecentValidLDLResult",
+                                 "libraryName" : "SharedLogic",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        },
+                        "then" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "- LDL cholesterol within the last six years",
+                           "type" : "Literal"
+                        },
+                        "else" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           }
+                        }
+                     }, {
+                        "type" : "If",
+                        "condition" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "IsNull",
+                              "operand" : {
+                                 "name" : "MostRecentValidHDLResult",
+                                 "libraryName" : "SharedLogic",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        },
+                        "then" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "- HDL cholesterol within the last six years",
+                           "type" : "Literal"
+                        },
+                        "else" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           }
+                        }
+                     }, {
+                        "type" : "If",
+                        "condition" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "IsNull",
+                              "operand" : {
+                                 "name" : "MostRecentValidCVDRiskAssessmentResult",
+                                 "libraryName" : "SharedLogic",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        },
+                        "then" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "- ASCVD Risk Assessment within the last six years",
+                           "type" : "Literal"
+                        },
+                        "else" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           }
+                        }
+                     }, {
+                        "type" : "If",
+                        "condition" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "IsNull",
+                              "operand" : {
+                                 "name" : "IsSmoker",
+                                 "libraryName" : "SharedLogic",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        },
+                        "then" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "- Tobacco smoking status within the last year",
+                           "type" : "Literal"
+                        },
+                        "else" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           }
+                        }
+                     } ]
+                  },
+                  "separator" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "\n",
+                     "type" : "Literal"
+                  }
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
                }
             }
          }, {

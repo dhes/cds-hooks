@@ -225,12 +225,14 @@ define HasRhabdomyolysis:
 
 // Set up a list of needed information for card 2
 define NeedMoreInformation: 
-  Combine(List{
-    if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol within the last six years' else null, 
-    if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol within the last six years' else null,
-    if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null then '- ASCVD Risk Assessment within the last six years' else null,
-    if SharedLogic.IsSmoker is null then '- Tobacco smoking status within the last year' else null
-  },'\n')
+  if InDemographicAndHasErrors then
+    Combine(List{
+      if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol within the last six years' else null, 
+      if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol within the last six years' else null,
+      if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null then '- ASCVD Risk Assessment within the last six years' else null,
+      if SharedLogic.IsSmoker is null then '- Tobacco smoking status within the last year' else null
+    },'\n')
+  else null
 
 // for hook card conditionExpression
 // I only want to see a card if action is needed

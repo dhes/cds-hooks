@@ -448,7 +448,7 @@ define Errors:
   }) E where E is not null
 
 define AllErrors:
-  Combine(Errors, '\n\r')
+  Combine(Errors, '\n')
 
 define InDemographicAndHasErrors:
   InDemographic and Exists(Errors)
