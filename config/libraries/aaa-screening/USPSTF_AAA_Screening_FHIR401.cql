@@ -135,7 +135,6 @@ define Excluded:
   HasRecentOrCompletedbdomenAortaUltrasoundServiceRequest
 
 define InPopulation:
-//  Included and not Excluded // to do
   Included and not Excluded
 
 define Notification:
@@ -156,7 +155,7 @@ Here are some links to resources to help you get started:
 
  define Information: // to do
    //(List{ // to do - there may be more
-     if TobaccoHistoryNeeded  
+     if IsMale and Is65Through75YearsOld and TobaccoHistoryNeeded  
      then 
       'INFORMATION: Please record a tobacco history. Has this patient ever smoked?'
      else null

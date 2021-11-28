@@ -810,8 +810,20 @@
                   "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                   "type" : "As",
                   "operand" : {
-                     "name" : "TobaccoHistoryNeeded",
-                     "type" : "ExpressionRef"
+                     "type" : "And",
+                     "operand" : [ {
+                        "type" : "And",
+                        "operand" : [ {
+                           "name" : "IsMale",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "name" : "Is65Through75YearsOld",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "name" : "TobaccoHistoryNeeded",
+                        "type" : "ExpressionRef"
+                     } ]
                   }
                },
                "then" : {
