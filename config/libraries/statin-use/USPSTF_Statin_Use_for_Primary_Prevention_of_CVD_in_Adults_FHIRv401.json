@@ -769,7 +769,7 @@
                },
                "separator" : {
                   "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                  "value" : "\n\r",
+                  "value" : "\n",
                   "type" : "Literal"
                }
             }
