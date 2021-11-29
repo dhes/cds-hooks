@@ -119,6 +119,10 @@ define function AdjustedResult(Result System.Quantity, AllowedRange Interval<Sys
 define InDemographic:
   AgeInYears() >= 40 and AgeInYears() <= 79
 
+// only for troubleshooting: delete or comment out as you like DH
+define Age: AgeInYears()
+define Now: Now()
+
 // ## Gather patient observations and characteristics needed by the risk model.
 
 // Race and gender determine which set of parameters to use in the calculation.
@@ -403,6 +407,9 @@ define PopulationLogHazard: Params[14]
 define PatientBaselineRisk:
 	1.0 - BaselineSurvival^( Exp( PatientLogHazard - PopulationLogHazard ) )
 
+define PatientBaselineRiskPercent:
+  Round(PatientBaselineRisk * 100, 2)
+
 // The list of pertinent error messages related to:
 // - the patient not meeting inclusion criteria
 // - necessary data missing from the patient's record or too old to use
@@ -411,6 +418,7 @@ define PatientBaselineRisk:
 // logic to determine which message(s) should be displayed.  This CQL function is provided as a convenience until the
 // corresponding FHIR Clinical Reasoning modules are developed or for systems that cannot implement FHIR Clinical
 // Reasoning.
+// DH has modified these to read as requests for info instead of reports of errors in the cds-hooks cards. 
 define Errors:
   (List{
     // Patient must be in age range 40 - 79 year (inclusive).
@@ -447,6 +455,7 @@ define Errors:
     else null
   }) E where E is not null
 
+// DH created this variable for cds-hooks cards
 define AllErrors:
   Combine(Errors, '\n')
 

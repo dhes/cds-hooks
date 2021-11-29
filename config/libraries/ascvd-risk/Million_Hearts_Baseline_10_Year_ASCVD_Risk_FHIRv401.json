@@ -255,6 +255,29 @@
                } ]
             }
          }, {
+            "name" : "Age",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "precision" : "Year",
+               "type" : "CalculateAge",
+               "operand" : {
+                  "path" : "birthDate.value",
+                  "type" : "Property",
+                  "source" : {
+                     "name" : "Patient",
+                     "type" : "ExpressionRef"
+                  }
+               }
+            }
+         }, {
+            "name" : "Now",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Now"
+            }
+         }, {
             "name" : "RaceExtension",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -2607,6 +2630,32 @@
                      }
                   } ]
                } ]
+            }
+         }, {
+            "name" : "PatientBaselineRiskPercent",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Round",
+               "operand" : {
+                  "type" : "Multiply",
+                  "operand" : [ {
+                     "name" : "PatientBaselineRisk",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "type" : "ToDecimal",
+                     "operand" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "100",
+                        "type" : "Literal"
+                     }
+                  } ]
+               },
+               "precision" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "2",
+                  "type" : "Literal"
+               }
             }
          }, {
             "name" : "Errors",

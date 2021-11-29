@@ -8,9 +8,9 @@
       {
         "conditionExpression": "PatientBaselineRisk",
         "card": {
-          "summary": "Baseline 10-Year ASCVD risk score: ${PatientBaselineRisk}",
+          "summary": "Baseline 10-Year ASCVD risk score: ${PatientBaselineRiskPercent}%",
           "indicator": "info",
-          "detail": "Baseline 10-Year ASCVD risk score: ${PatientBaselineRisk}",
+          "detail": "Baseline 10-Year ASCVD risk score: ${PatientBaselineRiskPercent}%",
           "source": {
             "label": "CDS Connect: CMS’s Million Hearts® Model Longitudinal ASCVD Risk Assessment Tool for Baseline 10-Year ASCVD Risk",
             "url": "https://cds.ahrq.gov/cdsconnect/artifact/cmss-million-heartsr-model-longitudinal-ascvd-risk-assessment-tool-baseline-10"
@@ -22,7 +22,7 @@
         }
       },
       {
-        "conditionExpression": "InDemographic",
+        "conditionExpression": "AllErrors",
         "card": {
           "summary": "More information needed to complete 10-Year ASCVD risk assessment",
           "indicator": "warning",
