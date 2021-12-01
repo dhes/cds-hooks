@@ -422,12 +422,13 @@ define PatientBaselineRiskPercent:
 define Errors:
   (List{
     // Patient must be in age range 40 - 79 year (inclusive).
-    if InDemographic is false then
-      'ERROR: This CDS is not applicable, as patients must be age 40-79 years (inclusive).'
-    else null,
-    // Patient must have a recorded birthdate in order to calculate age.
+    // Not really an error.... DH
+    // if InDemographic is false then
+    //   'ERROR: This CDS is not applicable, as patients must be age 40-79 years (inclusive).'
+    // else null,
+    // // Patient must have a recorded birthdate in order to calculate age.
     if AgeInYears() is null then
-      'ERROR: Inadequate data to process CDS: birthdate is missing.'
+      '- Birthdate '
     else null,
     // Patient must have a recorded race to determine the correct calculation parameters.
     if Race is null then
@@ -456,11 +457,13 @@ define Errors:
   }) E where E is not null
 
 // DH created this variable for cds-hooks cards
+// incorporates cases where age is in range or age is unknown
+// i.e. InDemographic is true or InDemographic is null
 define AllErrors:
-  Combine(Errors, '\n')
+  if (InDemographic is not false) then Combine(Errors, '\n') else null 
 
-define InDemographicAndHasErrors:
-  InDemographic and Exists(Errors)
+// define InDemographicAndHasErrors: // retire me
+//  InDemographic and Exists(Errors)
 
 // The list of pertinent warning messages related to:
 // - using equations for Whites when the patient's race is other than White or African American / Black

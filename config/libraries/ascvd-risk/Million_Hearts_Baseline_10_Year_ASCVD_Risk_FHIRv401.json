@@ -2673,31 +2673,6 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsFalse",
-                              "operand" : {
-                                 "name" : "InDemographic",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: This CDS is not applicable, as patients must be age 40-79 years (inclusive).",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
                               "type" : "IsNull",
                               "operand" : {
                                  "precision" : "Year",
@@ -2715,7 +2690,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "ERROR: Inadequate data to process CDS: birthdate is missing.",
+                           "value" : "- Birthdate ",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2909,33 +2884,40 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "Combine",
-               "source" : {
-                  "name" : "Errors",
-                  "type" : "ExpressionRef"
-               },
-               "separator" : {
-                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                  "value" : "\n",
-                  "type" : "Literal"
-               }
-            }
-         }, {
-            "name" : "InDemographicAndHasErrors",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "type" : "And",
-               "operand" : [ {
-                  "name" : "InDemographic",
-                  "type" : "ExpressionRef"
-               }, {
-                  "type" : "Exists",
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "IsFalse",
+                        "operand" : {
+                           "name" : "InDemographic",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "Combine",
+                  "source" : {
                      "name" : "Errors",
                      "type" : "ExpressionRef"
+                  },
+                  "separator" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "\n",
+                     "type" : "Literal"
                   }
-               } ]
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
             }
          }, {
             "name" : "Warnings",
