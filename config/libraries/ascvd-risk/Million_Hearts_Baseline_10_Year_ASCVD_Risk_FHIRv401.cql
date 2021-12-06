@@ -422,12 +422,13 @@ define PatientBaselineRiskPercent:
 define Errors:
   (List{
     // Patient must be in age range 40 - 79 year (inclusive).
-    if InDemographic is false then
-      'ERROR: This CDS is not applicable, as patients must be age 40-79 years (inclusive).'
-    else null,
-    // Patient must have a recorded birthdate in order to calculate age.
+    // Not really an error.... DH
+    // if InDemographic is false then
+    //   'ERROR: This CDS is not applicable, as patients must be age 40-79 years (inclusive).'
+    // else null,
+    // // Patient must have a recorded birthdate in order to calculate age.
     if AgeInYears() is null then
-      'ERROR: Inadequate data to process CDS: birthdate is missing.'
+      '- Birthdate '
     else null,
     // Patient must have a recorded race to determine the correct calculation parameters.
     if Race is null then
