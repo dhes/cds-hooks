@@ -2884,33 +2884,40 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "Combine",
-               "source" : {
-                  "name" : "Errors",
-                  "type" : "ExpressionRef"
-               },
-               "separator" : {
-                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                  "value" : "\n",
-                  "type" : "Literal"
-               }
-            }
-         }, {
-            "name" : "InDemographicAndHasErrors",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "type" : "And",
-               "operand" : [ {
-                  "name" : "InDemographic",
-                  "type" : "ExpressionRef"
-               }, {
-                  "type" : "Exists",
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
                   "operand" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "IsFalse",
+                        "operand" : {
+                           "name" : "InDemographic",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  }
+               },
+               "then" : {
+                  "type" : "Combine",
+                  "source" : {
                      "name" : "Errors",
                      "type" : "ExpressionRef"
+                  },
+                  "separator" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "\n",
+                     "type" : "Literal"
                   }
-               } ]
+               },
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}String",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
             }
          }, {
             "name" : "Warnings",

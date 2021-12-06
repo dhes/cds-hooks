@@ -457,11 +457,13 @@ define Errors:
   }) E where E is not null
 
 // DH created this variable for cds-hooks cards
+// incorporates cases where age is in range or age is unknown
+// i.e. InDemographic is true or InDemographic is null
 define AllErrors:
-  Combine(Errors, '\n')
+  if (InDemographic is not false) then Combine(Errors, '\n') else null 
 
-define InDemographicAndHasErrors:
-  InDemographic and Exists(Errors)
+// define InDemographicAndHasErrors: // retire me
+//  InDemographic and Exists(Errors)
 
 // The list of pertinent warning messages related to:
 // - using equations for Whites when the patient's race is other than White or African American / Black
