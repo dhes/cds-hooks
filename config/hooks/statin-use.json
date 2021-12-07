@@ -7,6 +7,7 @@
     "Patient": "Patient/{{context.patientId}}",
     "Condition": "Condition?patient={{context.patientId}}",
     "Procedure": "Procedure?patient={{context.patientId}}",
+    "MedicationRequest": "MedicationRequest??patient={{context.patientId}}",
     "Labs": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory&date=gt2015-12-07",
     "AscvdRiskAndSmokingStatus": "Observation?patient={{context.patientId}}&code=http://loinc.org|72166-2,http://loinc.org|79423-0"
   },
