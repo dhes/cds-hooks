@@ -7,11 +7,11 @@
     "Patient": "Patient/{{context.patientId}}",
     "Condition": "Condition?patient={{context.patientId}}",
     "Procedure": "Procedure?patient={{context.patientId}}",
-    "Observation": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory&date=gt2015-12-07"
+    "Labs": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory&date=gt2015-12-07",
+    "AscvdRiskAndSmokingStatus": "Observation?patient={{context.patientId}}&code=http://loinc.org|72166-2,http://loinc.org|79423-0"
   },
   "_config": {
     "cards": [{
-      "conditionExpression": "YesRecommendation",
       "card": {
         "summary": "Statin Use for the Primary Prevention of CVD in Adults",
         "indicator": "info",
@@ -20,6 +20,53 @@
           "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
           "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
         },
+        "selectionBehavior": "at-most-one",
+        "suggestions": [
+          {
+            "label": "Order Example Statin 10 MG Oral Tablet",
+            "actions": [
+              {
+                "type": "create",
+                "description": "A statin to prescribe",
+                "resource": {
+                  "resourceType": "MedicationOrder",
+                  "status": "active",
+                  "medicationCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://example.org/",
+                        "code": "11111",
+                        "display": "Example Statin 10 MG Oral Tablet"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "label": "Order Example Statin 20 MG Oral Tablet",
+            "actions": [
+              {
+                "type": "create",
+                "description": "A statin to prescribe",
+                "resource": {
+                  "resourceType": "MedicationOrder",
+                  "status": "active",
+                  "medicationCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://example.org/",
+                        "code": "22222",
+                        "display": "Example Statin 20 MG Oral Tablet"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
         "extension": {
           "grade": "${RecommendationGrade}",
           "rationale": "${Rationale}"
