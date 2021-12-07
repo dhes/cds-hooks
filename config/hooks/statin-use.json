@@ -7,7 +7,7 @@
     "Patient": "Patient/{{context.patientId}}",
     "Condition": "Condition?patient={{context.patientId}}",
     "Procedure": "Procedure?patient={{context.patientId}}",
-    "Observation": "Observation?patient={{context.patientId}}&code=http://loinc.org|79423-0,http://loinc.org|72166-2"
+    "Observation": "Observation?patient={{context.patientId}}&code=http://loinc.org|72166-2,http://loinc.org|79423-0,http://loinc.org|2085-9,http://loinc.org|2093-3"
   },
   "_config": {
     "cards": [{
