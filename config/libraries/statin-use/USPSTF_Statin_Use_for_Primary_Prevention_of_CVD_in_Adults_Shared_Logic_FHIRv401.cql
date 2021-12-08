@@ -50,7 +50,10 @@ include CDS_Connect_Conversions version '1.0.2' called Convert
 
 // Declare what code systems we are using to directly reference individual codes (not part of a value set)
 codesystem "LOINC": 'http://loinc.org'
-codesystem "SNOMED-CT": 'http://snomed.info/sct/1000124'
+// the trailing /1000124, whatever it means, seemed to be causing some error with codeableConcept equivalence
+// i.e. MostRecentValidSmokingStatus ~ "Smoking status unknown" was reading as false when it should be true
+// codesystem "SNOMED-CT": 'http://snomed.info/sct/1000124'
+codesystem "SNOMED-CT": 'http://snomed.info/sct'
 codesystem "ICD-10-CM": 'http://hl7.org/fhir/sid/icd-10-cm'
 
 // ## Value sets ##
@@ -178,6 +181,8 @@ valueset "Percutaneous Coronary Intervention SNOMEDCT": 'https://cts.nlm.nih.gov
 // <http://www.hl7.org/fhir/us/core/ValueSet-us-core-smoking-status-observation-codes.html>
 code "Tobacco smoking status": '72166-2' from "LOINC" display 'Tobacco smoking status'
 
+code "Smoking status unknown": '266927001' from "SNOMED-CT" display 'Tobacco smoking consumption unknown (finding)'
+
 // Using the LOINC Code for the ACC/AHA cardiovascular pooled cohort risk calculator
 code "CVD 10-year risk": '79423-0' from "LOINC"
   display 'Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013'
@@ -274,8 +279,13 @@ define MostRecentValidSmokingStatus:
 
 // Determines if last documented smoking status pointed to patient being a smoker.
 define IsSmoker:
-  if MostRecentValidSmokingStatus is null then null
-  else MostRecentValidSmokingStatus in "Current Tobacco Smoker"
+//  if (MostRecentValidSmokingStatus is null or MostRecentValidSmokingStatus ~ "Smoking status unknown") then null
+  case 
+    when MostRecentValidSmokingStatus is null then null
+    when MostRecentValidSmokingStatus ~ "Smoking status unknown" then null
+    else MostRecentValidSmokingStatus in "Current Tobacco Smoker"
+  end
+  // DH I added most recent status is "unknown" (which is not in "Current Tobacco Smoker" then this logic assigns the patient as a non-smoker, which we don't really know, right?)
 
 // The most recent verified (final or amended) ACC/AHA CVD Risk Assessment.  Note that although FHIR R4 has a
 // RiskAssessment resource, we've chosen to use Observation.  This is because RiskAssessment is at maturity level 1

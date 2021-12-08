@@ -44,7 +44,7 @@
             "accessLevel" : "Public"
          }, {
             "name" : "SNOMED-CT",
-            "id" : "http://snomed.info/sct/1000124",
+            "id" : "http://snomed.info/sct",
             "accessLevel" : "Public"
          }, {
             "name" : "ICD-10-CM",
@@ -187,6 +187,14 @@
             "accessLevel" : "Public",
             "codeSystem" : {
                "name" : "LOINC"
+            }
+         }, {
+            "name" : "Smoking status unknown",
+            "id" : "266927001",
+            "display" : "Tobacco smoking consumption unknown (finding)",
+            "accessLevel" : "Public",
+            "codeSystem" : {
+               "name" : "SNOMED-CT"
             }
          }, {
             "name" : "CVD 10-year risk",
@@ -645,25 +653,44 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "If",
-               "condition" : {
-                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "type" : "As",
-                  "operand" : {
+               "type" : "Case",
+               "caseItem" : [ {
+                  "when" : {
                      "type" : "IsNull",
                      "operand" : {
                         "name" : "MostRecentValidSmokingStatus",
                         "type" : "ExpressionRef"
                      }
+                  },
+                  "then" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
                   }
-               },
-               "then" : {
-                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "type" : "As",
-                  "operand" : {
-                     "type" : "Null"
+               }, {
+                  "when" : {
+                     "type" : "Equivalent",
+                     "operand" : [ {
+                        "name" : "MostRecentValidSmokingStatus",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "type" : "ToConcept",
+                        "operand" : {
+                           "name" : "Smoking status unknown",
+                           "type" : "CodeRef"
+                        }
+                     } ]
+                  },
+                  "then" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
                   }
-               },
+               } ],
                "else" : {
                   "type" : "InValueSet",
                   "code" : {

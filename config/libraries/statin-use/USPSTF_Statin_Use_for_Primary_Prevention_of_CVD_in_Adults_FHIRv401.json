@@ -58,6 +58,33 @@
                }
             }
          }, {
+            "name" : "MostRecentValidSmokingStatus",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "MostRecentValidSmokingStatus",
+               "libraryName" : "SharedLogic",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "name" : "MostRecentValidSmokingStatusIsExpresslyUnknown",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Equivalent",
+               "operand" : [ {
+                  "name" : "MostRecentValidSmokingStatus",
+                  "type" : "ExpressionRef"
+               }, {
+                  "type" : "ToConcept",
+                  "operand" : {
+                     "name" : "Smoking status unknown",
+                     "libraryName" : "SharedLogic",
+                     "type" : "CodeRef"
+                  }
+               } ]
+            }
+         }, {
             "name" : "MeetsInclusionCriteria",
             "context" : "Patient",
             "accessLevel" : "Public",

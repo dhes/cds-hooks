@@ -45,6 +45,14 @@ parameter GradeCRecommendationEnabled default true
 
 context Patient
 
+// DH for troubleshooting - delete if you wish
+define MostRecentValidSmokingStatus:
+  SharedLogic.MostRecentValidSmokingStatus
+
+// DH troubleshooting
+define MostRecentValidSmokingStatusIsExpresslyUnknown:
+  MostRecentValidSmokingStatus ~ SharedLogic."Smoking status unknown"
+
 // Determines if the patient meets the inclusion criteria for the CDS.  This should only be used in combination with
 // checking the exclusion criteria as well.
 define MeetsInclusionCriteria:
