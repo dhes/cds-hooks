@@ -15,6 +15,13 @@
             "label": "CDS Connect: CMS’s Million Hearts® Model Longitudinal ASCVD Risk Assessment Tool for Baseline 10-Year ASCVD Risk",
             "url": "https://cds.ahrq.gov/cdsconnect/artifact/cmss-million-heartsr-model-longitudinal-ascvd-risk-assessment-tool-baseline-10"
           },
+          "links": [
+            {
+              "label": "Add ASCVD Risk Score to chart",
+              "url": "http://localhost:9090/launch.html",
+              "type": "smart"
+            }
+          ],
           "suggestion": {
             "label": "Update patient's chart with this value",
             "isRecommended": true,
