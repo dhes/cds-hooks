@@ -169,7 +169,7 @@
       {
         "conditionExpression": "AllErrors",
         "card": {
-          "summary": "More information needed to complete 10-Year ASCVD risk assessment",
+          "summary": "More information needed to complete 10-Year ASCVD risk assessment for ${Patient.name[0].given[0].value}",
           "indicator": "warning",
           "detail": "${AllErrors}",
           "source": {

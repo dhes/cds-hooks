@@ -224,6 +224,7 @@ async function call(req, res, next) {
   }
   const pid = resultIDs[0];
   const pResults = results.patientResults[pid];
+  console.dir(JSON.stringify(pResults["Patient"])); // DH
 
   const cards= [];
 
