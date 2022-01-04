@@ -4,97 +4,6 @@
   "title": "CMS’s Million Hearts® Model Longitudinal ASCVD Risk Assessment Tool for Baseline 10-Year ASCVD Risk",
   "description": "This artifact provides the ability to calculate a baseline 10-Year ASCVD risk score to support primary prevention of ASCVD. It utilizes the 2013 ACC/AHA pooled cohort equation to calculate the risk of developing a first time \"hard\" ASCVD event, defined as: nonfatal myocardial infarction (MI), coronary heart disease (CHD) death, nonfatal stroke, or fatal stroke.",
   "_config": {
-    "systemAction":[
-      {
-        "type": "update",
-        "description": "add race value of 'white' to chart",
-        "resource": {
-          "resourceType": "Patient",
-          "id": "Patient/{{context.patientId}}",
-          "text": {
-            "status": "generated",
-            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Carol Allen</div>"
-          },
-          "identifier": [
-            {
-              "use": "official",
-              "type": {
-                "coding": [
-                  {
-                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                    "code": "MR",
-                    "display": "Medical Record Number"
-                  }
-                ],
-                "text": "Medical Record Number"
-              },
-              "system": "http://hospital.smarthealthit.org",
-              "value": "smart-1577780"
-            }
-          ],
-          "active": true,
-          "name": [
-            {
-              "use": "official",
-              "family": "Allen",
-              "given": [
-                "Carol",
-                "G"
-              ]
-            }
-          ],
-          "telecom": [
-            {
-              "system": "phone",
-              "value": "800-613-1713",
-              "use": "mobile"
-            },
-            {
-              "system": "email",
-              "value": "carol.allen@example.com"
-            }
-          ],
-          "gender": "female",
-          "birthDate": "1963-12-26",
-          "address": [
-            {
-              "use": "home",
-              "line": [
-                "67 Meadow St"
-              ],
-              "city": "Sapulpa",
-              "state": "OK",
-              "postalCode": "74066",
-              "country": "USA"
-            }
-          ],
-          "generalPractitioner": [
-            {
-              "reference": "Practitioner/smart-Practitioner-71482713"
-            }
-          ],                  
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-              "extension": [
-                {
-                  "url": "ombCategory",
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.6.238",
-                    "code": "2106-3",
-                    "display": "White"
-                  }
-                },
-                {
-                  "url": "text",
-                  "valueString": "White"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ],
     "cards": [
       {
         "conditionExpression": "PatientBaselineRisk",
@@ -116,46 +25,13 @@
           "selectionBehavior": "at-most-one",
           "suggestions": [
             {
-              "label": "Update patient's chart with this value",
+              "label": "Update patient chart with race",
               "isRecommended": true,
               "actions": [
                 {
-                  "type": "create",
-                  "description": "add to chart",
-                  "resource": {
-                    "resourceType": "Observation",
-                    "id": "ascvd-risk-001",
-                    "status": "final",
-                    "category": [
-                      {
-                        "coding": [
-                          {
-                            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                            "code": "social-history",
-                            "display": "Social History"
-                          }
-                        ],
-                        "text": "Social History"
-                      }
-                    ],
-                    "code": {
-                      "coding": [
-                        {
-                          "system": "http://loinc.org",
-                          "code": "79423-0",
-                          "display": "Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013"
-                        }
-                      ],
-                      "text": "Cardiovascular disease 10Y risk [Likelihood] ACC-AHA Pooled Cohort by Goff 2013"
-                    },
-                    "valueQuantity": {
-                      "value": 15.1,
-                      "unit": "%",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "%"
-                    },
-                    "effectiveDateTime": "2021-04-05T00:00:00.000Z"
-                  }
+                  "type": "update",
+                  "description": "add race to chart",
+                  "resource": "${Patient}"
                 }
               ]
             }
@@ -204,92 +80,8 @@
               "actions": [
                 {
                   "type": "update",
-                  "description": "add race value of 'white' to chart",
-                  "resource": {
-                    "resourceType": "Patient",
-                    "id": "Patient/{{context.patientId}}",
-                    "text": {
-                      "status": "generated",
-                      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Carol Allen</div>"
-                    },
-                    "identifier": [
-                      {
-                        "use": "official",
-                        "type": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                              "code": "MR",
-                              "display": "Medical Record Number"
-                            }
-                          ],
-                          "text": "Medical Record Number"
-                        },
-                        "system": "http://hospital.smarthealthit.org",
-                        "value": "smart-1577780"
-                      }
-                    ],
-                    "active": true,
-                    "name": [
-                      {
-                        "use": "official",
-                        "family": "Allen",
-                        "given": [
-                          "Carol",
-                          "G"
-                        ]
-                      }
-                    ],
-                    "telecom": [
-                      {
-                        "system": "phone",
-                        "value": "800-613-1713",
-                        "use": "mobile"
-                      },
-                      {
-                        "system": "email",
-                        "value": "carol.allen@example.com"
-                      }
-                    ],
-                    "gender": "female",
-                    "birthDate": "1963-12-26",
-                    "address": [
-                      {
-                        "use": "home",
-                        "line": [
-                          "67 Meadow St"
-                        ],
-                        "city": "Sapulpa",
-                        "state": "OK",
-                        "postalCode": "74066",
-                        "country": "USA"
-                      }
-                    ],
-                    "generalPractitioner": [
-                      {
-                        "reference": "Practitioner/smart-Practitioner-71482713"
-                      }
-                    ],                  
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-                        "extension": [
-                          {
-                            "url": "ombCategory",
-                            "valueCoding": {
-                              "system": "urn:oid:2.16.840.1.113883.6.238",
-                              "code": "2106-3",
-                              "display": "White"
-                            }
-                          },
-                          {
-                            "url": "text",
-                            "valueString": "White"
-                          }
-                        ]
-                      }
-                    ]
-                  }
+                  "description": "add race value of 'white' to chart, Dan",
+                  "resource": "${Patient}"
                 }
               ]
             }

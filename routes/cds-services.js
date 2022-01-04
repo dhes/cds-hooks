@@ -245,6 +245,7 @@ async function call(req, res, next) {
       }
     }
     const card = interpolateVariables(cardCfg.card, pResults);
+    console.dir("card: " + JSON.stringify(card));
 
     // If there are errors or warnings, report them as extensions
     const report = (label, items) => {
