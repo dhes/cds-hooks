@@ -190,6 +190,7 @@ async function call(req, res, next) {
 
   // Load the data into the patient source
   patientSource.loadBundles([bundle]);
+  console.dir("patientSource: " + JSON.stringify(patientSource["_bundles"][0].entry[0].resource));
 
   // Execute it and send the results
   let results;
@@ -224,7 +225,7 @@ async function call(req, res, next) {
   }
   const pid = resultIDs[0];
   const pResults = results.patientResults[pid];
-  console.dir(JSON.stringify(pResults["Patient"])); // DH
+  console.dir("pResults: " + JSON.stringify(pResults["Patient"])); // DH
 
   const cards= [];
 
