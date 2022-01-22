@@ -2658,6 +2658,17 @@
                }
             }
          }, {
+            "name" : "RaceMissing",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "IsNull",
+               "operand" : {
+                  "name" : "Race",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
             "name" : "Errors",
             "context" : "Patient",
             "accessLevel" : "Public",

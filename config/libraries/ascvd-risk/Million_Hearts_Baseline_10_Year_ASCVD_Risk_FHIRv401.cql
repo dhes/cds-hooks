@@ -419,6 +419,9 @@ define PatientBaselineRiskPercent:
 // corresponding FHIR Clinical Reasoning modules are developed or for systems that cannot implement FHIR Clinical
 // Reasoning.
 // DH has modified these to read as requests for info instead of reports of errors in the cds-hooks cards. 
+// This is to trigger the card requesting race to be entered: 
+define RaceMissing: 
+  Race is null 
 define Errors:
   (List{
     // Patient must be in age range 40 - 79 year (inclusive).

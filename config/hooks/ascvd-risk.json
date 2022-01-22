@@ -43,7 +43,7 @@
         }
       },
       {
-        "conditionExpression": "AllErrors",
+        "conditionExpression": "RaceMissing",
         "card": {
           "summary": "More information needed to complete 10-Year ASCVD risk assessment for ${Patient.name[0].given[0].value}",
           "indicator": "warning",
