@@ -78,21 +78,7 @@
           "extension": {
             "errors": "${Errors}",
             "warnings": "${Warnings}"
-          },
-          "selectionBehavior": "at-most-one",
-          "suggestions": [
-            {
-              "label": "Add race value of 'white'",
-              "isRecommended": true,
-              "actions": [
-                {
-                  "type": "update",
-                  "description": "add race value of 'white' to chart, Dan",
-                  "resource": "${Patient}"
-                }
-              ]
-            }
-          ]
+          }
         }
       }
     ],
