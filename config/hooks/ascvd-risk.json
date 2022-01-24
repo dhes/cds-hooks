@@ -45,7 +45,7 @@
       {
         "conditionExpression": "RaceMissing",
         "card": {
-          "summary": "More information needed to complete 10-Year ASCVD risk assessment for ${Patient.name[0].given[0].value}",
+          "summary": "Race category is needed to complete 10-Year ASCVD risk assessment. ",
           "indicator": "warning",
           "detail": "${AllErrors}",
           "source": {
@@ -54,7 +54,7 @@
           },
           "links": [
             {
-              "label": "Add race=white to chart",
+              "label": "Select 'race'",
               "url": "http://localhost:9090/launch.html",
               "type": "smart"
             }
