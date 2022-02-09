@@ -43,7 +43,6 @@
         }
       },
       {
-        "conditionExpression": "RaceMissing",
         "card": {
           "summary": "Race category is needed to complete 10-Year ASCVD risk assessment. ",
           "indicator": "warning",
