@@ -792,7 +792,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "- Tobacco smoking status within the last year",
+                           "value" : "- Tobacco smoking status within the last six years",
                            "type" : "Literal"
                         },
                         "else" : {
