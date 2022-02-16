@@ -6,7 +6,8 @@
   "prefetch": {
     "patient": "Patient/{{context.patientId}}",
     "labs": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory&date=gt2015-12-31",
-    "smokingHistory": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|social-history&date=gt2021-02-14"
+    "smokingHistory": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|social-history&date=gt2021-02-14",
+    "bloodPressure": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&date=gt2015-02-14"
   },
   "_config": {
     "cards": [
