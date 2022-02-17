@@ -501,3 +501,22 @@ define MeetsExclusionCriteria:
   // a statin medication.
   or OnStatinTherapy
   or HasRhabdomyolysis
+
+define EnumerateExclusionCritera:
+  if MeetsExclusionCriteria then
+  Combine(List{
+    if HasCVD then 'has CVD' else null,
+    if HasHadCVDProcedures then 'HasHadCVDProcedures' else null,
+    if MostRecentValidLDLResult > 190 'mg/dL' then 'MostRecentValidLDLResult > 190 mg/dL' else null,
+    if HasFamilialHypercholesterolemia then 'HasFamilialHypercholesterolemia' else null,
+    if IsPregnant then 'IsPregnant' else null,
+    if IsBreastfeeding then 'IsBreastfeeding' else null,
+    if HasEndStageRenalDisease then 'HasEndStageRenalDisease' else null,
+    if HasHadRecentEndStageRenalDiseaseEncounter then 'HasHadRecentEndStageRenalDiseaseEncounter' else null,
+    if OnDialysis then 'OnDialysis' else null,
+    if DependentUponDialysis then 'DependentUponDialysis' else null,
+    if HasCirrhosis then 'HasCirrhosis' else null,
+    if OnStatinTherapy then 'OnStatinTherapy' else null,
+    if HasRhabdomyolysis then 'HasRhabdomyolysis' else null
+  }, '\n')
+  else null

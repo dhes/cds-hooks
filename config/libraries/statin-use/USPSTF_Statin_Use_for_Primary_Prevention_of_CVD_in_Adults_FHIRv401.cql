@@ -261,3 +261,6 @@ define YesRecommendation:
     when ShouldDiscussStatin then 'Discuss initiation of low to moderate intensity lipid lowering therapy'
     else null
   end
+
+define ExclusionCriteria:
+  SharedLogic.EnumerateExclusionCritera

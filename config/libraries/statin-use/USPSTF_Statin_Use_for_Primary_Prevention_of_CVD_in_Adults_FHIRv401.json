@@ -882,6 +882,15 @@
                   }
                }
             }
+         }, {
+            "name" : "ExclusionCriteria",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "EnumerateExclusionCritera",
+               "libraryName" : "SharedLogic",
+               "type" : "ExpressionRef"
+            }
          } ]
       }
    }

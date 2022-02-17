@@ -85,6 +85,25 @@
             "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
           }
         }
+      },
+      {
+        "conditionExpression": "ExclusionCriteria",
+        "card": {
+          "uuid": "3",
+          "summary": "Exclusion Criteria:",
+          "indicator": "info",
+          "detail": "${ExclusionCriteria}",
+          "source": {
+            "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
+            "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
+          },
+          "overrideReasons": [
+            {
+              "uuid": "3",
+              "display": "Done reviewing"
+            }
+          ]
+        }
       }
     ],
     "cql": {
