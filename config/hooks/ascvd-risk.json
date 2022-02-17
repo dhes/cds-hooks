@@ -14,6 +14,7 @@
       {
         "conditionExpression": "PatientBaselineRisk",
         "card": {
+          "uuid": "2",
           "summary": "Baseline 10-Year ASCVD risk score: ${PatientBaselineRiskPercent}%",
           "indicator": "info",
           "detail": "Baseline 10-Year ASCVD risk score: ${PatientBaselineRiskPercent}%",
@@ -23,47 +24,18 @@
           },
           "links": [
             {
-              "label": "Add ASCVD Risk Score to chart",
+              "label": "Edit patient information",
               "url": "http://localhost:9090/launch.html",
               "type": "smart"
+            }
+          ],
+          "overrideReasons": [
+            {
+              "uuid": "2",
+              "display": "Done reviewing"
             }
           ],
           "selectionBehavior": "at-most-one",
-          "suggestions": [
-            {
-              "label": "Update patient chart with race",
-              "isRecommended": true,
-              "actions": [
-                {
-                  "type": "update",
-                  "description": "add race to chart",
-                  "resource": "${Patient}"
-                }
-              ]
-            }
-          ],
-          "extension": {
-            "errors": "${Errors}",
-            "warnings": "${Warnings}"
-          }
-        }
-      },
-      {
-        "card": {
-          "summary": "Race category is needed to complete 10-Year ASCVD risk assessment. ",
-          "indicator": "warning",
-          "detail": "${AllErrors}",
-          "source": {
-            "label": "CDS Connect: CMS’s Million Hearts® Model Longitudinal ASCVD Risk Assessment Tool for Baseline 10-Year ASCVD Risk",
-            "url": "https://cds.ahrq.gov/cdsconnect/artifact/cmss-million-heartsr-model-longitudinal-ascvd-risk-assessment-tool-baseline-10"
-          },
-          "links": [
-            {
-              "label": "Select 'race'",
-              "url": "http://localhost:9090/launch.html",
-              "type": "smart"
-            }
-          ],
           "extension": {
             "errors": "${Errors}",
             "warnings": "${Warnings}"

@@ -85,16 +85,6 @@
             "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
           }
         }
-      },
-      {
-        "card": {
-          "summary": "More information needed to complete Statin Use assessment",
-          "indicator": "warning",
-          "detail": "Most recent ASCVD risk assessment: ${MostRecentValidCVDRiskAssessmentResultIsNull}",
-          "source": {
-            "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
-          }
-        }
       }
     ],
     "cql": {
