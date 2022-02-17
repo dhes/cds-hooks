@@ -231,6 +231,17 @@ define OnStatinTherapy:
 define HasRhabdomyolysis:
   SharedLogic.HasRhabdomyolysis
 
+// DH A couple of my own:
+
+define MostRecentValidCVDRiskAssessment:
+  SharedLogic.MostRecentValidCVDRiskAssessment
+
+define MostRecentValidCVDRiskAssessmentResult:
+  SharedLogic.MostRecentValidCVDRiskAssessmentResult
+
+define MostRecentValidCVDRiskAssessmentResultIsNull: 
+  MostRecentValidCVDRiskAssessmentResult is null
+
 // Set up a list of needed information for card 2
 define NeedMoreInformation: 
   if InDemographicAndHasErrors then

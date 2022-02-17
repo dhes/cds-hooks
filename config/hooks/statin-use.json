@@ -12,79 +12,91 @@
     "AscvdRiskAndSmokingStatus": "Observation?patient={{context.patientId}}&code=http://loinc.org|72166-2,http://loinc.org|79423-0"
   },
   "_config": {
-    "cards": [{
-      "card": {
-        "summary": "Statin Use for the Primary Prevention of CVD in Adults",
-        "indicator": "info",
-        "detail": "${Recommendation}",
-        "source": {
-          "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
-          "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
-        },
-        "selectionBehavior": "at-most-one",
-        "suggestions": [
-          {
-            "label": "Order Example Statin 10 MG Oral Tablet",
-            "actions": [
-              {
-                "type": "create",
-                "description": "A statin to prescribe",
-                "resource": {
-                  "resourceType": "MedicationOrder",
-                  "status": "active",
-                  "medicationCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://example.org/",
-                        "code": "11111",
-                        "display": "Example Statin 10 MG Oral Tablet"
-                      }
-                    ]
-                  }
-                }
-              }
-            ]
+    "cards": [
+      {
+        "card": {
+          "summary": "Statin Use for the Primary Prevention of CVD in Adults",
+          "indicator": "info",
+          "detail": "${Recommendation}",
+          "source": {
+            "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
+            "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
           },
-          {
-            "label": "Order Example Statin 20 MG Oral Tablet",
-            "actions": [
-              {
-                "type": "create",
-                "description": "A statin to prescribe",
-                "resource": {
-                  "resourceType": "MedicationOrder",
-                  "status": "active",
-                  "medicationCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://example.org/",
-                        "code": "22222",
-                        "display": "Example Statin 20 MG Oral Tablet"
-                      }
-                    ]
+          "selectionBehavior": "at-most-one",
+          "suggestions": [
+            {
+              "label": "Order Example Statin 10 MG Oral Tablet",
+              "actions": [
+                {
+                  "type": "create",
+                  "description": "A statin to prescribe",
+                  "resource": {
+                    "resourceType": "MedicationOrder",
+                    "status": "active",
+                    "medicationCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://example.org/",
+                          "code": "11111",
+                          "display": "Example Statin 10 MG Oral Tablet"
+                        }
+                      ]
+                    }
                   }
                 }
-              }
-            ]
+              ]
+            },
+            {
+              "label": "Order Example Statin 20 MG Oral Tablet",
+              "actions": [
+                {
+                  "type": "create",
+                  "description": "A statin to prescribe",
+                  "resource": {
+                    "resourceType": "MedicationOrder",
+                    "status": "active",
+                    "medicationCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://example.org/",
+                          "code": "22222",
+                          "display": "Example Statin 20 MG Oral Tablet"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "extension": {
+            "grade": "${RecommendationGrade}",
+            "rationale": "${Rationale}"
           }
-        ],
-        "extension": {
-          "grade": "${RecommendationGrade}",
-          "rationale": "${Rationale}"
+        }
+      },
+      {
+        "conditionExpression": "NeedMoreInformation",
+        "card": {
+          "summary": "More information needed to complete Statin Use assessment",
+          "indicator": "warning",
+          "detail": "${NeedMoreInformation}",
+          "source": {
+            "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
+          }
+        }
+      },
+      {
+        "card": {
+          "summary": "More information needed to complete Statin Use assessment",
+          "indicator": "warning",
+          "detail": "Most recent ASCVD risk assessment: ${MostRecentValidCVDRiskAssessmentResultIsNull}",
+          "source": {
+            "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
+          }
         }
       }
-    },
-    {
-      "conditionExpression": "NeedMoreInformation",
-      "card": {
-        "summary": "More information needed to complete Statin Use assessment",
-        "indicator": "warning",
-        "detail": "${NeedMoreInformation}",
-        "source": {
-          "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults"
-        }
-      }
-    }],
+    ],
     "cql": {
       "library": {
         "id": "USPSTF_Statin_Use_for_Primary_Prevention_of_CVD_in_Adults_FHIRv401",

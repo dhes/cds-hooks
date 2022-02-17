@@ -681,6 +681,35 @@
                "type" : "ExpressionRef"
             }
          }, {
+            "name" : "MostRecentValidCVDRiskAssessment",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "MostRecentValidCVDRiskAssessment",
+               "libraryName" : "SharedLogic",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "name" : "MostRecentValidCVDRiskAssessmentResult",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "MostRecentValidCVDRiskAssessmentResult",
+               "libraryName" : "SharedLogic",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "name" : "MostRecentValidCVDRiskAssessmentResultIsNull",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "IsNull",
+               "operand" : {
+                  "name" : "MostRecentValidCVDRiskAssessmentResult",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
             "name" : "NeedMoreInformation",
             "context" : "Patient",
             "accessLevel" : "Public",
