@@ -331,7 +331,7 @@
                   },
                   "then" : {
                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                     "value" : "No USPSTF recommendation provided, as patient does not meet inclusion criteria",
+                     "value" : "Statin therapy not recommended, as patient does not meet inclusion criteria",
                      "type" : "Literal"
                   }
                }, {
@@ -341,7 +341,7 @@
                   },
                   "then" : {
                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                     "value" : "No USPSTF recommendation provided, as patient meets exclusion criteria",
+                     "value" : "Statin therapy not recommended, as patient has these exclusions:",
                      "type" : "Literal"
                   }
                } ],

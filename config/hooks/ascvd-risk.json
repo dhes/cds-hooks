@@ -35,7 +35,6 @@
               "display": "Done reviewing"
             }
           ],
-          "selectionBehavior": "at-most-one",
           "extension": {
             "errors": "${Errors}",
             "warnings": "${Warnings}"

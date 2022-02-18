@@ -2085,7 +2085,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "has CVD",
+                           "value" : "- has CVD",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2107,7 +2107,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "HasHadCVDProcedures",
+                           "value" : "- has had CVD procedure",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2136,7 +2136,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "MostRecentValidLDLResult > 190 mg/dL",
+                           "value" : "- most recent LDL result > 190 mg/dL",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2158,7 +2158,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "HasFamilialHypercholesterolemia",
+                           "value" : "- has familial hypercholesterolemia",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2180,7 +2180,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "IsPregnant",
+                           "value" : "- is pregnant",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2202,7 +2202,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "IsBreastfeeding",
+                           "value" : "- is breastfeeding",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2224,7 +2224,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "HasEndStageRenalDisease",
+                           "value" : "- has end stage renal disease",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2246,7 +2246,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "HasHadRecentEndStageRenalDiseaseEncounter",
+                           "value" : "- has had recent end stage renal disease encounter",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2268,7 +2268,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "OnDialysis",
+                           "value" : "- on dialysis",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2290,7 +2290,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "DependentUponDialysis",
+                           "value" : "- dependent upon dialysis",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2312,7 +2312,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "HasCirrhosis",
+                           "value" : "- has cirrhosis",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2334,7 +2334,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "OnStatinTherapy",
+                           "value" : "- on statin therapy",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -2356,7 +2356,7 @@
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "HasRhabdomyolysis",
+                           "value" : "- has rhabdomyolysis",
                            "type" : "Literal"
                         },
                         "else" : {

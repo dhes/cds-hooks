@@ -504,19 +504,19 @@ define MeetsExclusionCriteria:
 
 define EnumerateExclusionCritera:
   if MeetsExclusionCriteria then
-  Combine(List{
-    if HasCVD then 'has CVD' else null,
-    if HasHadCVDProcedures then 'HasHadCVDProcedures' else null,
-    if MostRecentValidLDLResult > 190 'mg/dL' then 'MostRecentValidLDLResult > 190 mg/dL' else null,
-    if HasFamilialHypercholesterolemia then 'HasFamilialHypercholesterolemia' else null,
-    if IsPregnant then 'IsPregnant' else null,
-    if IsBreastfeeding then 'IsBreastfeeding' else null,
-    if HasEndStageRenalDisease then 'HasEndStageRenalDisease' else null,
-    if HasHadRecentEndStageRenalDiseaseEncounter then 'HasHadRecentEndStageRenalDiseaseEncounter' else null,
-    if OnDialysis then 'OnDialysis' else null,
-    if DependentUponDialysis then 'DependentUponDialysis' else null,
-    if HasCirrhosis then 'HasCirrhosis' else null,
-    if OnStatinTherapy then 'OnStatinTherapy' else null,
-    if HasRhabdomyolysis then 'HasRhabdomyolysis' else null
-  }, '\n')
+    Combine(List{
+      if HasCVD then '- has CVD' else null,
+      if HasHadCVDProcedures then '- has had CVD procedure' else null,
+      if MostRecentValidLDLResult > 190 'mg/dL' then '- most recent LDL result > 190 mg/dL' else null,
+      if HasFamilialHypercholesterolemia then '- has familial hypercholesterolemia' else null,
+      if IsPregnant then '- is pregnant' else null,
+      if IsBreastfeeding then '- is breastfeeding' else null,
+      if HasEndStageRenalDisease then '- has end stage renal disease' else null,
+      if HasHadRecentEndStageRenalDiseaseEncounter then '- has had recent end stage renal disease encounter' else null,
+      if OnDialysis then '- on dialysis' else null,
+      if DependentUponDialysis then '- dependent upon dialysis' else null,
+      if HasCirrhosis then '- has cirrhosis' else null,
+      if OnStatinTherapy then '- on statin therapy' else null,
+      if HasRhabdomyolysis then '- has rhabdomyolysis' else null
+    }, '\n')
   else null

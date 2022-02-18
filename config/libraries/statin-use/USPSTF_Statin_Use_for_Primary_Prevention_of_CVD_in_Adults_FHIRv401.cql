@@ -112,12 +112,14 @@ define RecommendationGrade:
 // Reasoning.  Since CQL does not have user-facing message construction as a primary use case, some of these messages
 // are intentionally broad to avoid complicating the CQL.  When implemented using FHIR Clinical Reasoning, it will be
 // possible to provide more specific messages (such as indicating exactly which exclusion was present in the record).
+// before - when not MeetsInclusionCriteria then 'No USPSTF recommendation provided, as patient does not meet inclusion criteria'
+// before - when MeetsExclusionCriteria then 'No USPSTF recommendation provided, as patient meets exclusion criteria'
 define Recommendation:
   case
     when ShouldStartStatin then 'Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider'
     when ShouldDiscussStatin then 'Discuss initiation of low to moderate intensity lipid lowering therapy'
-    when not MeetsInclusionCriteria then 'No USPSTF recommendation provided, as patient does not meet inclusion criteria'
-    when MeetsExclusionCriteria then 'No USPSTF recommendation provided, as patient meets exclusion criteria'
+    when not MeetsInclusionCriteria then 'Statin therapy not recommended, as patient does not meet inclusion criteria'
+    when MeetsExclusionCriteria then 'Statin therapy not recommended, as patient has these exclusions:'
     else null
   end
 
