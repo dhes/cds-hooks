@@ -44,6 +44,7 @@
       {
         "conditionExpression": "AllErrors",
         "card": {
+          "uuid": "5",
           "summary": "More information needed to complete 10-Year ASCVD risk assessment",
           "indicator": "warning",
           "detail": "${AllErrors}",
@@ -51,6 +52,19 @@
             "label": "CDS Connect: CMS’s Million Hearts® Model Longitudinal ASCVD Risk Assessment Tool for Baseline 10-Year ASCVD Risk",
             "url": "https://cds.ahrq.gov/cdsconnect/artifact/cmss-million-heartsr-model-longitudinal-ascvd-risk-assessment-tool-baseline-10"
           },
+          "links": [
+            {
+              "label": "Edit patient information",
+              "url": "http://localhost:9090/launch.html",
+              "type": "smart"
+            }
+          ],
+          "overrideReasons": [
+            {
+              "uuid": "5",
+              "display": "Done reviewing"
+            }
+          ],
           "extension": {
             "errors": "${Errors}",
             "warnings": "${Warnings}"
