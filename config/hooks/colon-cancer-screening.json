@@ -12,11 +12,11 @@
   "_config": {
     "cards": [
       {
-        "conditionExpression": "NeedsColonoscopy",
+        "conditionExpression": "ColorectalCancerScreeningRecommendation",
         "card": {
           "summary": "Screening for Colorectal Cancer",
           "indicator": "info",
-          "detail": "${NeedsColonoscopy}",
+          "detail": "${ColorectalCancerScreeningRecommendation}",
           "source": {
             "label": "USPSTF Colorectal cancer screening",
             "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/colorectal-cancer-screening"
