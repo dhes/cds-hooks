@@ -2,12 +2,11 @@
   "id": "colon-cancer-screening",
   "hook": "patient-view",
   "title": "Screening for colorectal cancer",
-  "description": "The USPSTF recommends screening for colorectal cancer in adults aged 45 to 49 (Grade B) and 50 to 75 (Grade C) years.",
+  "description": "The USPSTF recommends screening for colorectal cancer in adults aged 45 to 49 years (Grade B) and 50 to 75 years (Grade A) years.",
   "prefetch": {
     "Patient": "Patient/{{context.patientId}}",
     "Procedure": "Procedure?patient={{context.patientId}}",
     "Condition": "Condition?patient={{context.patientId}}",
-    "ServiceRequest": "ServiceRequest?patient={{context.patientId}}",
     "LaboratoryObservation": "Observation?category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory&code=http://loinc.org|77353-1,http://loinc.org|77354-9,http://loinc.org|12503-9,http://loinc.org|12504-7,http://loinc.org|14563-1,http://loinc.org|14564-9,http://loinc.org|14565-6,http://loinc.org|2335-8,http://loinc.org|27396-1,http://loinc.org|27401-9,http://loinc.org|27925-7,http://loinc.org|27926-5,http://loinc.org|29771-3,http://loinc.org|56490-6,http://loinc.org|56491-4,http://loinc.org|57905-2,http://loinc.org|58453-2,http://loinc.org|80372-6,http://loinc.org|60515-4,http://loinc.org|72531-7,http://loinc.org|79069-1,http://loinc.org|79071-7,http://loinc.org|79101-2,http://loinc.org|82688-3"
   },
   "_config": {
