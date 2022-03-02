@@ -924,8 +924,8 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "dataType" : "{http://hl7.org/fhir}Observation",
-               "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
+               "dataType" : "{http://hl7.org/fhir}Procedure",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/Procedure",
                "type" : "Retrieve"
             }
          }, {

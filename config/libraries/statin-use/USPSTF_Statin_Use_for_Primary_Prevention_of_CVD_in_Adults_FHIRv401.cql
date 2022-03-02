@@ -275,7 +275,7 @@ define PostmanObservationTrigger:
 define PostmanConditionTrigger:
   [Condition]
 define PostmanProcedureTrigger:
-  [Observation]
+  [Procedure]
 define PostmanMedicationStatementTrigger:
   [MedicationStatement]
 define PostmanMedicationRequestTrigger:
