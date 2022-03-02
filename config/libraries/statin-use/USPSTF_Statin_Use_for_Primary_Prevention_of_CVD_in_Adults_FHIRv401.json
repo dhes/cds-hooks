@@ -901,6 +901,60 @@
                "libraryName" : "SharedLogic",
                "type" : "ExpressionRef"
             }
+         }, {
+            "name" : "PostmanObservationTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}Observation",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
+               "type" : "Retrieve"
+            }
+         }, {
+            "name" : "PostmanConditionTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}Condition",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/Condition",
+               "type" : "Retrieve"
+            }
+         }, {
+            "name" : "PostmanProcedureTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}Observation",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/Observation",
+               "type" : "Retrieve"
+            }
+         }, {
+            "name" : "PostmanMedicationStatementTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}MedicationStatement",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+               "type" : "Retrieve"
+            }
+         }, {
+            "name" : "PostmanMedicationRequestTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}MedicationRequest",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+               "type" : "Retrieve"
+            }
+         }, {
+            "name" : "PostmanMedicationDispenseTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}MedicationDispense",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
+               "type" : "Retrieve"
+            }
          } ]
       }
    }

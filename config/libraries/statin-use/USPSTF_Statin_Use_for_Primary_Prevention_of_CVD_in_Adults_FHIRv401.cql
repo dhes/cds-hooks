@@ -268,3 +268,17 @@ define YesRecommendation:
 
 define ExclusionCriteria:
   SharedLogic.EnumerateExclusionCritera
+
+// dummy defines to trigger the Postman test generator of cql-testing to create prefetch entrie for: 
+define PostmanObservationTrigger:
+  [Observation]
+define PostmanConditionTrigger:
+  [Condition]
+define PostmanProcedureTrigger:
+  [Observation]
+define PostmanMedicationStatementTrigger:
+  [MedicationStatement]
+define PostmanMedicationRequestTrigger:
+  [MedicationRequest]
+define PostmanMedicationDispenseTrigger:
+  [MedicationDispense]
