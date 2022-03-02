@@ -4,10 +4,11 @@
   "title": "CMS’s Million Hearts® Model Longitudinal ASCVD Risk Assessment Tool for Baseline 10-Year ASCVD Risk",
   "description": "This artifact provides the ability to calculate a baseline 10-Year ASCVD risk score to support primary prevention of ASCVD. It utilizes the 2013 ACC/AHA pooled cohort equation to calculate the risk of developing a first time \"hard\" ASCVD event, defined as: nonfatal myocardial infarction (MI), coronary heart disease (CHD) death, nonfatal stroke, or fatal stroke.",
   "prefetch": {
-    "patient": "Patient/{{context.patientId}}",
-    "labs": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory&date=gt2015-12-31",
-    "smokingHistory": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|social-history&date=gt2021-02-14",
-    "bloodPressure": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&date=gt2015-02-14"
+    "Patient": "Patient/{{context.patientId}}",
+    "Observation": "Observation?patient={{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|laboratory, http://terminology.hl7.org/CodeSystem/observation-category|social-history, http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&date=gt2016-03-03",
+    "Condition": "Condition?patient={{context.patientId}}",
+    "MedicationStatement":"MedicationStatement?patient={{context.patientId}}",
+    "MedicationRequest":"MedicationRequest?patient={{context.patientId}}"
   },
   "_config": {
     "cards": [
