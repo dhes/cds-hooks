@@ -244,16 +244,37 @@ define MostRecentValidCVDRiskAssessmentResult:
 define MostRecentValidCVDRiskAssessmentResultIsNull: 
   MostRecentValidCVDRiskAssessmentResult is null
 
+// To shorten expressions in NeedMoreInformation:
+define CVDRiskScoreIsLessThanTenPercent:
+  if (MostRecentValidCVDRiskAssessmentResult is not null and MostRecentValidCVDRiskAssessmentResult < 10.0 '%' ) then true else false
+
+
 // Set up a list of needed information for card 2
 // the card only appears if more information is needed and the
 // ...patient is not already excluded.
+// DH 'and HasCVDRiskFactors' added to suppress request for information about CVD risk factors if one has already been identified. 
+// DH add to suppress request for information about CVD risk factors when it's not needed
 define NeedMoreInformation: 
-  if SharedLogic.InDemographic and not MeetsExclusionCriteria then // before this was 'if InDemographicAndHasErrors and not MeetsExclusionCriteria then'
+  if SharedLogic.InDemographic and not MeetsExclusionCriteria then // DH before this was 'if InDemographicAndHasErrors and not MeetsExclusionCriteria then'
     Combine(List{
-      if SharedLogic.MostRecentValidLDLResult is null then '- LDL cholesterol within the last six years' else null, 
-      if SharedLogic.MostRecentValidHDLResult is null then '- HDL cholesterol within the last six years' else null,
-      if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null then '- ASCVD Risk Assessment within the last six years' else null,
-      if SharedLogic.IsSmoker is null then '- Tobacco smoking status within the last six years' else null
+      if SharedLogic.MostRecentValidLDLResult is null and 
+        HasCVDRiskFactors is null and 
+        CVDRiskScoreIsLessThanTenPercent is false 
+        then '- LDL cholesterol within the last six years' 
+        else null, 
+      if SharedLogic.MostRecentValidHDLResult is null and 
+        HasCVDRiskFactors is null and 
+        CVDRiskScoreIsLessThanTenPercent is false
+        then '- HDL cholesterol within the last six years' 
+        else null,
+      if SharedLogic.IsSmoker is null and 
+        HasCVDRiskFactors is null and 
+        CVDRiskScoreIsLessThanTenPercent is false and
+        then '- Tobacco smoking status within the last six years' 
+        else null,
+      if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null 
+        then '- ASCVD Risk Assessment within the last six years' 
+        else null
     },'\n')
   else null
 

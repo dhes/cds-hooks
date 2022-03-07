@@ -215,7 +215,7 @@ context Patient
 // Determines if patient's age, in years, at the time CQL is run, is within the limits defined by the USPSTF
 // recommendation (40 years - 75 years inclusive). **NOTE**: The CQL 'between' operator is inclusive.
 define InDemographic:
-  AgeInYears() between 40 and 75
+  AgeInYears() between 40 and 75 //inclusive
 
 // The most recent verified (final or amended) LDL test.
 define MostRecentLDLTest:
@@ -456,7 +456,8 @@ define HasMissingOrOldData:
   or IsSmoker is null
 
 // Determines if patient has one or more of the 4 risk factors defined by the USPSTF.
-define HasCVDRiskFactors:
+// DH this will be true or null. 
+define HasCVDRiskFactors: // HasACVDRiskFactor or HasAtLeatOneCVDRiskFactor or just HasCVDRiskFactor (without the s) would be a little more accurate DH
   MostRecentValidLDLResult > 130 'mg/dL'
   or MostRecentValidHDLResult < 40 'mg/dL'
   or HasDiabetes

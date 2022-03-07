@@ -710,6 +710,50 @@
                }
             }
          }, {
+            "name" : "CVDRiskScoreIsLessThanTenPercent",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "If",
+               "condition" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "And",
+                     "operand" : [ {
+                        "type" : "Not",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentValidCVDRiskAssessmentResult",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     }, {
+                        "type" : "Less",
+                        "operand" : [ {
+                           "name" : "MostRecentValidCVDRiskAssessmentResult",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "value" : 10.0,
+                           "unit" : "%",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  }
+               },
+               "then" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "value" : "true",
+                  "type" : "Literal"
+               },
+               "else" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                  "value" : "false",
+                  "type" : "Literal"
+               }
+            }
+         }, {
             "name" : "NeedMoreInformation",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -743,12 +787,30 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentValidLDLResult",
-                                 "libraryName" : "SharedLogic",
-                                 "type" : "ExpressionRef"
-                              }
+                              "type" : "And",
+                              "operand" : [ {
+                                 "type" : "And",
+                                 "operand" : [ {
+                                    "type" : "IsNull",
+                                    "operand" : {
+                                       "name" : "MostRecentValidLDLResult",
+                                       "libraryName" : "SharedLogic",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 }, {
+                                    "type" : "IsNull",
+                                    "operand" : {
+                                       "name" : "HasCVDRiskFactors",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ]
+                              }, {
+                                 "type" : "IsFalse",
+                                 "operand" : {
+                                    "name" : "CVDRiskScoreIsLessThanTenPercent",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ]
                            }
                         },
                         "then" : {
@@ -769,17 +831,79 @@
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
                            "type" : "As",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentValidHDLResult",
-                                 "libraryName" : "SharedLogic",
-                                 "type" : "ExpressionRef"
-                              }
+                              "type" : "And",
+                              "operand" : [ {
+                                 "type" : "And",
+                                 "operand" : [ {
+                                    "type" : "IsNull",
+                                    "operand" : {
+                                       "name" : "MostRecentValidHDLResult",
+                                       "libraryName" : "SharedLogic",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 }, {
+                                    "type" : "IsNull",
+                                    "operand" : {
+                                       "name" : "HasCVDRiskFactors",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ]
+                              }, {
+                                 "type" : "IsFalse",
+                                 "operand" : {
+                                    "name" : "CVDRiskScoreIsLessThanTenPercent",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ]
                            }
                         },
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
                            "value" : "- HDL cholesterol within the last six years",
+                           "type" : "Literal"
+                        },
+                        "else" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}String",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           }
+                        }
+                     }, {
+                        "type" : "If",
+                        "condition" : {
+                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "And",
+                              "operand" : [ {
+                                 "type" : "And",
+                                 "operand" : [ {
+                                    "type" : "IsNull",
+                                    "operand" : {
+                                       "name" : "IsSmoker",
+                                       "libraryName" : "SharedLogic",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 }, {
+                                    "type" : "IsNull",
+                                    "operand" : {
+                                       "name" : "HasCVDRiskFactors",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ]
+                              }, {
+                                 "type" : "IsFalse",
+                                 "operand" : {
+                                    "name" : "CVDRiskScoreIsLessThanTenPercent",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ]
+                           }
+                        },
+                        "then" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "- Tobacco smoking status within the last six years",
                            "type" : "Literal"
                         },
                         "else" : {
@@ -806,32 +930,6 @@
                         "then" : {
                            "valueType" : "{urn:hl7-org:elm-types:r1}String",
                            "value" : "- ASCVD Risk Assessment within the last six years",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "IsSmoker",
-                                 "libraryName" : "SharedLogic",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "- Tobacco smoking status within the last six years",
                            "type" : "Literal"
                         },
                         "else" : {
