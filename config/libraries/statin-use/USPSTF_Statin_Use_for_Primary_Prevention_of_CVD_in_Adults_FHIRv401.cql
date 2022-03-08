@@ -269,7 +269,7 @@ define NeedMoreInformation:
         else null,
       if SharedLogic.IsSmoker is null and 
         HasCVDRiskFactors is null and 
-        CVDRiskScoreIsLessThanTenPercent is false and
+        CVDRiskScoreIsLessThanTenPercent is false
         then '- Tobacco smoking status within the last six years' 
         else null,
       if SharedLogic.MostRecentValidCVDRiskAssessmentResult is null 
