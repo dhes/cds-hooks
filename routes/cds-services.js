@@ -249,17 +249,18 @@ async function call(req, res, next) {
     console.dir("card: " + JSON.stringify(card));
 
     // If there are errors or warnings, report them as extensions
-    const report = (label, items) => {
-      if (items == null || items.length === 0) {
-        return;
-      } else if (!Array.isArray(items)) {
-        items = [items];
-      }
-      card.extension = card.extension || {};
-      card.extension[label] = items;
-    };
-    report('errors', pResults['Errors']);
-    report('warnings', pResults['Warnings']);
+    // DH if I want something on the card I'll put it there, thank you anyway
+    // const report = (label, items) => {
+    //   if (items == null || items.length === 0) {
+    //     return;
+    //   } else if (!Array.isArray(items)) {
+    //     items = [items];
+    //   }
+    //   card.extension = card.extension || {};
+    //   card.extension[label] = items;
+    // };
+    // report('errors', pResults['Errors']);
+    // report('warnings', pResults['Warnings']);
 
     cards.push(card);
   }

@@ -15,17 +15,17 @@
       {
         "conditionExpression": "Recommendation",
         "card": {
-          "uuid": "4",
+          "uuid": 4,
           "summary": "Statin Use for the Primary Prevention of CVD",
           "indicator": "info",
-          "detail": "${Recommendation}\n${ExclusionCriteria}",
+          "detail": "${Recommendation}${ExclusionCriteria}",
           "source": {
             "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
             "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
           },
           "overrideReasons": [
             {
-              "uuid": "4",
+              "uuid": 4,
               "display": "Done reviewing"
             }
           ],
