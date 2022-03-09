@@ -508,7 +508,7 @@ define MeetsExclusionCriteria:
 
 define EnumerateExclusionCritera:
   if MeetsExclusionCriteria then
-    Combine(List{
+    Combine(List{'\n',
       if HasCVD then '- has CVD' else null,
       if HasHadCVDProcedures then '- has had CVD procedure' else null,
       if MostRecentValidLDLResult > 190 'mg/dL' then '- most recent LDL result > 190 mg/dL' else null,

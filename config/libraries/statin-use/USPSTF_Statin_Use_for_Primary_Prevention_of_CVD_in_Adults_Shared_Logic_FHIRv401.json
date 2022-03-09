@@ -2091,6 +2091,10 @@
                   "source" : {
                      "type" : "List",
                      "element" : [ {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "\n",
+                        "type" : "Literal"
+                     }, {
                         "type" : "If",
                         "condition" : {
                            "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
