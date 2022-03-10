@@ -508,7 +508,7 @@ define MeetsExclusionCriteria:
 
 define EnumerateExclusionCritera:
   if MeetsExclusionCriteria then
-    Combine(List{'\n',
+      '\n' + Combine(List{
       if HasCVD then '- has CVD' else null,
       if HasHadCVDProcedures then '- has had CVD procedure' else null,
       if MostRecentValidLDLResult > 190 'mg/dL' then '- most recent LDL result > 190 mg/dL' else null,
@@ -516,7 +516,7 @@ define EnumerateExclusionCritera:
       if IsPregnant then '- is pregnant' else null,
       if IsBreastfeeding then '- is breastfeeding' else null,
       if HasEndStageRenalDisease then '- has end stage renal disease' else null,
-      if HasHadRecentEndStageRenalDiseaseEncounter then '- has had recent end stage renal disease encounter' else null,
+      if HasHadRecentEndStageRenalDiseaseEncounter then '- has end stage renal disease' else null,
       if OnDialysis then '- on dialysis' else null,
       if DependentUponDialysis then '- dependent upon dialysis' else null,
       if HasCirrhosis then '- has cirrhosis' else null,
