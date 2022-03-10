@@ -2291,7 +2291,7 @@
                            },
                            "then" : {
                               "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                              "value" : "- on dialysis",
+                              "value" : "- is on dialysis",
                               "type" : "Literal"
                            },
                            "else" : {
@@ -2357,7 +2357,7 @@
                            },
                            "then" : {
                               "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                              "value" : "- on statin therapy",
+                              "value" : "- is on statin therapy",
                               "type" : "Literal"
                            },
                            "else" : {

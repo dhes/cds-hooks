@@ -517,10 +517,10 @@ define EnumerateExclusionCritera:
       if IsBreastfeeding then '- is breastfeeding' else null,
       if HasEndStageRenalDisease then '- has end stage renal disease' else null,
       if HasHadRecentEndStageRenalDiseaseEncounter then '- has end stage renal disease' else null,
-      if OnDialysis then '- on dialysis' else null,
+      if OnDialysis then '- is on dialysis' else null,
       if DependentUponDialysis then '- dependent upon dialysis' else null,
       if HasCirrhosis then '- has cirrhosis' else null,
-      if OnStatinTherapy then '- on statin therapy' else null,
+      if OnStatinTherapy then '- is on statin therapy' else null,
       if HasRhabdomyolysis then '- has rhabdomyolysis' else null
     }, '\n')
   else null
