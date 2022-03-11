@@ -1053,6 +1053,15 @@
                "templateId" : "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
                "type" : "Retrieve"
             }
+         }, {
+            "name" : "PostmanEncounterTrigger",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "dataType" : "{http://hl7.org/fhir}Encounter",
+               "templateId" : "http://hl7.org/fhir/StructureDefinition/Encounter",
+               "type" : "Retrieve"
+            }
          } ]
       }
    }

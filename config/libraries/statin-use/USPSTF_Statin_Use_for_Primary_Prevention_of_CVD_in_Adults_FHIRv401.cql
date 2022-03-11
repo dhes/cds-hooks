@@ -303,3 +303,6 @@ define PostmanMedicationRequestTrigger:
   [MedicationRequest]
 define PostmanMedicationDispenseTrigger:
   [MedicationDispense]
+// added by DH: 
+define PostmanEncounterTrigger:
+  [Encounter]

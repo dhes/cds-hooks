@@ -7,7 +7,9 @@
     "Patient": "Patient/{{context.patientId}}",
     "Condition": "Condition?patient={{context.patientId}}",
     "Procedure": "Procedure?patient={{context.patientId}}",
+    "MedicationDispense": "MedicationRequest?patient={{context.patientId}}",
     "MedicationRequest": "MedicationRequest?patient={{context.patientId}}",
+    "MedicationStatement": "MedicationRequest?patient={{context.patientId}}",
     "Observation": "Observation?patient={{context.patientId}}&code=http://loinc.org|72166-2,http://loinc.org|79423-0,http://loinc.org|13457-7,http://loinc.org|18261-8,http://loinc.org|18262-6,http://loinc.org|2089-1,http://loinc.org|43394-6,http://loinc.org|49132-4,http://loinc.org|50193-2,http://loinc.org|55440-2,http://loinc.org|86911-5,http://loinc.org|90364-1,http://loinc.org|91105-7,http://loinc.org|91106-5,http://loinc.org|91107-3,http://loinc.org|91108-1,http://loinc.org|91109-9,http://loinc.org|91110-7,http://loinc.org|91111-5,http://loinc.org|96259-7,http://loinc.org|96597-0,http://loinc.org|18263-4,http://loinc.org|2085-9,http://loinc.org|49130-8,http://loinc.org|14646-4,http://loinc.org|18263-4,http://loinc.org|2085-9,http://loinc.org|12773-8,http://loinc.org|13457-7,http://loinc.org|18261-8,http://loinc.org|18262-6,http://loinc.org|2089-1,http://loinc.org|22748-8,http://loinc.org|39469-2,http://loinc.org|49132-4,http://loinc.org|55440-2",
     "Encounter": "Encounter?patient={{context.patientId}}"
   },
