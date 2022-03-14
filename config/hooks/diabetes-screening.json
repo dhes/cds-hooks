@@ -1,0 +1,33 @@
+{
+  "id": "diabetes-screening",
+  "hook": "patient-view",
+  "title": "Prediabetes and Type 2 Diabetes: Screening",
+  "description": "The USPSTF recommends screening for prediabetes and type 2 diabetes in adults aged 35 to 70 years who have overweight or obesity. ",
+  "prefetch": {
+    "Patient": "Patient/{{context.patientId}}",
+    "Condition": "Condition?patient={{context.patientId}}",
+    "Observation": "Observation?patient={{context.patientId}}"
+  },
+  "_config": {
+    "cards": [
+      {
+        "conditionExpression": "NeedMoreInformation",
+        "card": {
+          "summary": "Prediabetes and Type 2 Diabetes: Screening",
+          "indicator": "warning",
+          "detail": "${NeedMoreInformation}",
+          "source": {
+            "label": "Prediabetes and Type 2 Diabetes: Screening",
+            "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes"
+          }
+        }
+      }
+    ],
+    "cql": {
+      "library": {
+        "id": "USPSTF_Diabetes_Screening_FHIRv401",
+        "version": "0.0.1"
+      }
+    }
+  }
+}
