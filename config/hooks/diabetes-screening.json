@@ -21,6 +21,18 @@
             "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes"
           }
         }
+      },
+      {
+        "conditionExpression": "Recommendation",
+        "card": {
+          "summary": "Prediabetes and Type 2 Diabetes: Screening",
+          "indicator": "info",
+          "detail": "${Recommendation}",
+          "source": {
+            "label": "Prediabetes and Type 2 Diabetes: Screening",
+            "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes"
+          }
+        }
       }
     ],
     "cql": {
