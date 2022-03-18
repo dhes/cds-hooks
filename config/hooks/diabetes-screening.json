@@ -13,7 +13,7 @@
       {
         "conditionExpression": "NeedMoreInformation",
         "card": {
-          "summary": "Prediabetes and Type 2 Diabetes: Screening",
+          "summary": "More information needed to complete diabetes screening assessment",
           "indicator": "warning",
           "detail": "${NeedMoreInformation}",
           "source": {
