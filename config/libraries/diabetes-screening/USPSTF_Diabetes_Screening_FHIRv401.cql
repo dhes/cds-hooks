@@ -72,11 +72,34 @@ define Gender:
     else null
   end
 
+define MostRecentHeight:
+  C3F.MostRecent(C3F.Verified(Heights))
+
+// Get most recent date whether it is effectiveDateTime, instant, 
+// effectivePeriod.end, effectivePeriod.start or issued 
+// define HeightDate:
+//   C3F.FindDate(MostRecentHeight)
+
 define Height:
-  FHIRHelpers.ToQuantity(C3F.MostRecent(Heights).value)
+  C3F.QuantityValue(MostRecentHeight)
+
+define MostRecentWeight:
+  C3F.MostRecent(C3F.Verified(Weights))
+
+define WeightDate:
+  C3F.FindDate(MostRecentWeight)
 
 define Weight:
-  FHIRHelpers.ToQuantity(C3F.MostRecent(Weights).value)
+  C3F.QuantityValue(MostRecentWeight)
+
+define MostRecentBmiObservation:
+  C3F.MostRecent(C3F.Verified(BmiObservations))
+
+define BmiDate:
+  C3F.FindDate(MostRecentBmiObservation)
+
+define BmiObservation:
+  C3F.QuantityValue(MostRecentBmiObservation)
 
 define HeightInMeters:
   // the only allowed units are [in_i] or cm
@@ -96,32 +119,94 @@ define WeightInKilos:
     else null
   end
 
-define ScreeningNeverDone:
-  // never had HbA1c measure since turning 35
-  // or GTT or fasting glucose
-  null
+define BmiCalc:
+  if WeightInKilos is not null and HeightInMeters is not null then 
+    System.Quantity  {
+      value: WeightInKilos/(HeightInMeters^2), 
+      unit: 'kg/m2'
+    }
+  else null
 
+// truth table
+// Use the BMI recorded as an observation if it is more recent than the most recent height and weight observations; else the BMI calculated from height and weight
+// First determine which of these observastions exist and impact on BMI
+// | =================================================== |
+// |                     | Exists? -->                   |
+// | =================== | = | = | = | = | = | = | = | = |
+// |  BMI Observation    | T | T | T | F | F | F | T | F |
+// |  Height Observation | T | T | F | T | F | T | F | F |
+// |  Weight Observation | T | F | T | T | T | F | F | F |
+// | =================== | = | = | = | = | = | = | = | = |
+// |  BMI                | * | O | O | C | N | N | O | N |
+// | =================== | = | = | = | = | = | = | = | = |
+// 
+// N Null
+// O BMIO - BMI Observation
+// C BmiCalc - calculated from weight and height
+// * BMIO or BmiCalc, whichever is newer
+
+// inverting the truth table
+// | =============================== |
+// |          | BMIO | Wt | Ht | BMI |                
+// | =============================== |
+// |  Exists? |  T   | T  | T  |  *  |
+// |     |    |  T   | T  | F  |  O  |
+// |     |    |  T   | F  | T  |  O  |
+// |    \ /   |  F   | T  | T  |  C  |
+// |          |  F   | F  | T  |  N  |
+// |          |  F   | T  | F  |  N  |
+// |          |  T   | F  | F  |  O  |
+// |          |  F   | F  | F  |  N  |
+// | =============================== |
+// LEGEND
+// N Null
+// O BMIO - BMI Observation
+// C BmiCalc - calculated from weight and height
+// * BMIO or BmiCalc, whichever is newer
+// Weight and height might have different dates. 
+// Since height is relatively static, use the date of the weight to determine whether BmiObservation or BmiCalc is newer. 
+
+// Truth table in code form. T='exists' F='not exists'. The all-false case is covered by the last 'else null'
 define BMI:
-  WeightInKilos/(HeightInMeters^2)
-
-define BMIIsTwentyFiveOrGreater:
-  BMI>=25
+  case 
+    when     exists (BmiObservations) and     exists (Weights) and     exists (Heights) then if WeightDate > BmiDate then BmiCalc else BmiObservation
+    when     exists (BmiObservations) and     exists (Weights) and not exists (Heights) then BmiObservation
+    when     exists (BmiObservations) and not exists (Weights) and     exists (Heights) then BmiObservation
+    when not exists (BmiObservations) and     exists (Weights) and     exists (Heights) then BmiCalc
+    when not exists (BmiObservations) and not exists (Weights) and     exists (Heights) then null
+    when not exists (BmiObservations) and     exists (Weights) and not exists (Heights) then null
+    when     exists (BmiObservations) and not exists (Weights) and not exists (Heights) then BmiObservation
+    else                                                                                     null
+  end
+    
+// values for testing BMI logic only
+//  |
+// \ /
+define BmiEqualsBmiCalc:
+  BMI.value=BmiCalc.value
+define BmiEqualsBmiObs:
+  BMI.value=BmiObservation.value
+// / \
+//  |
 
 define IsOverweight:
   if BMI is not null then 
     case
-      when IsAsian and BMI>=23.0 then true
-      when BMI>= 25.0 then true
+      // when IsAsian and BMI>=23.0 then true
+      when IsAsian and BMI>=23.0 'kg/m2' and BMI<30.0 'kg/m2' then true
+      when not IsAsian and BMI>=25.0 'kg/m2' and BMI<30.0 'kg/m2' then true
       else false
     end
   else null
 
 define IsObese: 
-  BMI>=30.0
+  if BMI is not null then 
+    if BMI >= 30.0 'kg/m2' then true else false
+  else null
 
 define ScreeningTrigger:
   case 
-    when IsObese then 'obese' // if the patient is obese I assume this will short-circuit
+    when IsObese then 'obese' 
     when IsOverweight then 'overweight'
     else null
   end
@@ -143,6 +228,9 @@ define HasPrediabetes: // which includes IGG and IFG
   Exists(C3F.Confirmed(C3F.ActiveCondition([Condition: "Prediabetes"])))
 
 // 3 years is the interval suggested by the guideline
+// Including this interval is a design decision 
+// If you are following a strictly literal interpretation of the USPSTF guideline 
+// it would be reasonalbe to use a different interval or no interval. 
 define ScreenedWithinThreeYears:
   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack(
     [Observation: "HemoglobinA1cTest"] union
@@ -161,16 +249,18 @@ define NeedMoreInformation:
       '- date of birth'
     else
       if InAgeRange is true then
-        Combine(List{
-          if Height is null then '- height' else null,
-          if Weight is null then '- weight' else null
-        }, '\n')
+        // Saving this in case: 
+        // Combine(List{
+        //   if Height is null then '- height' else null,
+        //   if Weight is null then '- weight' else null
+        // }, '\n')
+        if (Height is null or Weight is null) and BmiObservation is null then 'Need height and weight or BMI' else null
       else null
   else null
 
 define Recommendation: 
   if InAgeRange is true and 
-    IsOverweight is true and 
+    (IsOverweight or IsObese) is true and 
     NeedMoreInformation is null and
     ScreenedWithinThreeYears is null and
     IsExcluded is false 
