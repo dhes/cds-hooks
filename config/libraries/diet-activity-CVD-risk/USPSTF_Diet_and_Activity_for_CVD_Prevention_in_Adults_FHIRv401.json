@@ -2367,224 +2367,215 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "Query",
-               "source" : [ {
-                  "alias" : "W",
-                  "expression" : {
-                     "type" : "List",
-                     "element" : [ {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
+               "type" : "Combine",
+               "source" : {
+                  "type" : "List",
+                  "element" : [ {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
                            "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentHDLcTest",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent HDLc lab test available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
+                              "name" : "MostRecentHDLcTest",
+                              "type" : "ExpressionRef"
                            }
                         }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentWaistCircumferenceMeasurement",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent waist circumference measurement available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent HDLc lab test available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
                         }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentLDLcTest",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent LDLc lab test available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentDiastolicBloodPressureReading",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent diastolic blood pressure reading available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentSystolicBloodPressureReading",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent systolic blood pressure reading available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentFastingPlasmaGlucoseTest",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent fasting plasma glucose lab test available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentTriglycerideLab",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent triglyceride lab test available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     }, {
-                        "type" : "If",
-                        "condition" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "IsNull",
-                              "operand" : {
-                                 "name" : "MostRecentCVDRiskScore",
-                                 "type" : "ExpressionRef"
-                              }
-                           }
-                        },
-                        "then" : {
-                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                           "value" : "INFORMATION: No recent CVD risk score available.",
-                           "type" : "Literal"
-                        },
-                        "else" : {
-                           "asType" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "As",
-                           "operand" : {
-                              "type" : "Null"
-                           }
-                        }
-                     } ]
-                  }
-               } ],
-               "relationship" : [ ],
-               "where" : {
-                  "type" : "Not",
-                  "operand" : {
-                     "type" : "IsNull",
-                     "operand" : {
-                        "name" : "W",
-                        "type" : "AliasRef"
                      }
-                  }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentWaistCircumferenceMeasurement",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent waist circumference measurement available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentLDLcTest",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent LDLc lab test available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentDiastolicBloodPressureReading",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent diastolic blood pressure reading available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentSystolicBloodPressureReading",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent systolic blood pressure reading available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentFastingPlasmaGlucoseTest",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent fasting plasma glucose lab test available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentTriglycerideLab",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent triglyceride lab test available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }, {
+                     "type" : "If",
+                     "condition" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "IsNull",
+                           "operand" : {
+                              "name" : "MostRecentCVDRiskScore",
+                              "type" : "ExpressionRef"
+                           }
+                        }
+                     },
+                     "then" : {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                        "value" : "- No recent CVD risk score available.",
+                        "type" : "Literal"
+                     },
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}String",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  } ]
+               },
+               "separator" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "\n",
+                  "type" : "Literal"
                }
             }
          } ]

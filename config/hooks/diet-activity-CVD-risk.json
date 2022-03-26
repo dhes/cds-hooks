@@ -40,8 +40,8 @@
     ],
     "cql": {
       "library": {
-        "id": "USPSTF_Diabetes_Screening_FHIRv401",
-        "version": "0.0.1"
+        "id": "USPSTF_Diet_and_Activity_for_CVD_Prevention_in_Adults_FHIRv401",
+        "version": "1.0.0"
       }
     }
   }

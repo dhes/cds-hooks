@@ -354,30 +354,31 @@ Here are some links to resources to help you get started:
   else
     null
 
+// DH I added the combine and deleted redundant INFORMATION: as in 'INFORMATION: No recent waist circumference measurement available.'
 define Information:
-  (List{
+  Combine(List{
     if (MostRecentHDLcTest is null) then
-      'INFORMATION: No recent HDLc lab test available.'
+      '- No recent HDLc lab test available.'
     else null,
     if (MostRecentWaistCircumferenceMeasurement is null) then
-      'INFORMATION: No recent waist circumference measurement available.'
+      '- No recent waist circumference measurement available.'
     else null,
     if (MostRecentLDLcTest is null) then
-      'INFORMATION: No recent LDLc lab test available.'
+      '- No recent LDLc lab test available.'
     else null,
     if (MostRecentDiastolicBloodPressureReading is null) then
-      'INFORMATION: No recent diastolic blood pressure reading available.'
+      '- No recent diastolic blood pressure reading available.'
     else null,
     if (MostRecentSystolicBloodPressureReading is null) then
-      'INFORMATION: No recent systolic blood pressure reading available.'
+      '- No recent systolic blood pressure reading available.'
     else null,
     if (MostRecentFastingPlasmaGlucoseTest is null) then
-      'INFORMATION: No recent fasting plasma glucose lab test available.'
+      '- No recent fasting plasma glucose lab test available.'
     else null,
     if (MostRecentTriglycerideLab is null) then
-      'INFORMATION: No recent triglyceride lab test available.'
+      '- No recent triglyceride lab test available.'
     else null,
     if (MostRecentCVDRiskScore is null) then
-      'INFORMATION: No recent CVD risk score available.'
+      '- No recent CVD risk score available.'
     else null
-  }) W where W is not null
+  },'\n')
