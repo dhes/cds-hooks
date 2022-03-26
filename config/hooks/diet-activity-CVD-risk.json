@@ -1,0 +1,48 @@
+{
+  "id": "diet-activity-CVD-risk",
+  "hook": "patient-view",
+  "title": "Healthy Diet and Physical Activity for Cardiovascular Disease Prevention in Adults With Cardiovascular Risk Factors: Behavioral Counseling Interventions",
+  "description": "The USPSTF recommends offering or referring adults with cardiovascular disease risk factors to behavioral counseling interventions to promote a healthy diet and physical activity. ",
+  "prefetch": {
+    "Patient": "Patient/{{context.patientId}}",
+    "Condition": "Condition?patient={{context.patientId}}",
+    "Observation": "Observation?patient={{context.patientId}}",
+    "ServiceRequest": "ServiceRequest?patient={{context.patientId}}",
+    "Procedure": "Procedure?patient={{context.patientId}}",
+    "Encounter": "Encounter?patient={{context.patientId}}"
+  },
+  "_config": {
+    "cards": [
+      {
+        "conditionExpression": "Information",
+        "card": {
+          "summary": "More information needed to complete assessment",
+          "indicator": "warning",
+          "detail": "${Information}",
+          "source": {
+            "label": "Healthy Diet and Physical Activity for Cardiovascular Disease Prevention",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/healthy-diet-and-physical-activity-counseling-adults-with-high-risk-of-cvd"
+          }
+        }
+      },
+      {
+        "conditionExpression": "Recommendation",
+        "card": {
+          "summary": "Diet and Physical Activity for Cardiovascular Disease Prevention",
+          "indicator": "info",
+          "detail": "${Recommendation}",
+          "source": {
+            "label": "Healthy Diet and Physical Activity for Cardiovascular Disease Prevention",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/healthy-diet-and-physical-activity-counseling-adults-with-high-risk-of-cvd"
+          }
+        }
+      }
+    ],
+    "cql": {
+      "library": {
+        "id": "USPSTF_Diabetes_Screening_FHIRv401",
+        "version": "0.0.1"
+      }
+    }
+  }
+}
