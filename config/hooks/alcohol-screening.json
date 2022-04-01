@@ -1,0 +1,35 @@
+{
+  "id": "alcohol-screening",
+  "hook": "patient-view",
+  "title": "Unhealthy Alcohol Use in Adults: Screening and Behavioral Counseling Interventions",
+  "description": "The USPSTF recommends screening for unhealthy alcohol use in primary care settings in adults 18 years or older, including pregnant women, and providing persons engaged in risky or hazardous drinking with brief behavioral counseling interventions to reduce unhealthy alcohol use.",
+  "prefetch": {
+    "Patient": "Patient/{{context.patientId}}",
+    "Condition": "Condition?patient={{context.patientId}}",
+    "Observation": "Observation?patient={{context.patientId}}",
+    "Questionnaire": "Questionnaire?patient={{context.patientId}}",
+    "QuestionnaireResponse": "QuestionnaireResponse?patient={{context.patientId}}"
+  },
+  "_config": {
+    "cards": [
+      {
+        "conditionExpression": "ApplyScreeningInstrument",
+        "card": {
+          "summary": "Needs Screening",
+          "indicator": "info",
+          "detail": "This patient is due for alcohol screening. Please run the alcohol questionnaire app. ",
+          "source": {
+            "label": "Unhealthy Alcohol Use in Adults: Screening",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions"
+          }
+        }
+      }
+    ],
+    "cql": {
+      "library": {
+        "id": "UsAuditLogicLibrary",
+        "version": "1.1.0"
+      }
+    }
+  }
+}
