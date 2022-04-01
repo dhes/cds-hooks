@@ -21,9 +21,29 @@
           "source": {
             "label": "Unhealthy Alcohol Use in Adults: Screening",
             "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions"
+          },
+          "links": [
+            {
+              "label": "Start questionnaire",
+              "url": "http://localhost:8080/launch_public_ehr.html",
+              "type": "smart"
+            }
+          ]
+        }
+      },
+      {
+        "conditionExpression": "HasEvidenceOfRecentAlcoholScreening",
+        "card": {
+          "summary": "Already screened",
+          "indicator": "info",
+          "detail": "This patient has recently been screened. ",
+          "source": {
+            "label": "Unhealthy Alcohol Use in Adults: Screening",
+            "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions"
           }
         }
       }
+
     ],
     "cql": {
       "library": {
