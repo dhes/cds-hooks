@@ -2578,6 +2578,26 @@
                   "type" : "Literal"
                }
             }
+         }, {
+            "name" : "NeedMoreInformation",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "And",
+               "operand" : [ {
+                  "type" : "Not",
+                  "operand" : {
+                     "type" : "IsNull",
+                     "operand" : {
+                        "name" : "Information",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               }, {
+                  "name" : "InPopulation",
+                  "type" : "ExpressionRef"
+               } ]
+            }
          } ]
       }
    }

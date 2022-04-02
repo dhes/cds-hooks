@@ -1,5 +1,5 @@
 {
-  "id": "diet-activity-CVD-risk",
+  "id": "diet-activity-CVD-prevention",
   "hook": "patient-view",
   "title": "Healthy Diet and Physical Activity for Cardiovascular Disease Prevention in Adults With Cardiovascular Risk Factors: Behavioral Counseling Interventions",
   "description": "The USPSTF recommends offering or referring adults with cardiovascular disease risk factors to behavioral counseling interventions to promote a healthy diet and physical activity. ",
@@ -14,9 +14,9 @@
   "_config": {
     "cards": [
       {
-        "conditionExpression": "Information",
+        "conditionExpression": "NeedMoreInformation",
         "card": {
-          "summary": "More information needed to complete assessment",
+          "summary": "Healthy Diet and Physical Activity for Cardiovascular Disease Prevention in Adults - More information needed to complete the assessment",
           "indicator": "warning",
           "detail": "${Information}",
           "source": {
