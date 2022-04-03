@@ -17,7 +17,7 @@
           "indicator": "warning",
           "detail": "${NeedMoreInformation}",
           "source": {
-            "label": "Prediabetes and Type 2 Diabetes: Screening",
+            "label": "USPSTF Prediabetes and Type 2 Diabetes: Screening",
             "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes"
           }
         }
@@ -29,7 +29,7 @@
           "indicator": "info",
           "detail": "${Recommendation}",
           "source": {
-            "label": "Prediabetes and Type 2 Diabetes: Screening",
+            "label": "USPSTF Prediabetes and Type 2 Diabetes: Screening",
             "url": "https://uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes"
           }
         }

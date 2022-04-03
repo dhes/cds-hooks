@@ -19,7 +19,7 @@
           "indicator": "info",
           "detail": "This patient is due for alcohol screening. Please run the alcohol questionnaire app. ",
           "source": {
-            "label": "Unhealthy Alcohol Use in Adults: Screening",
+            "label": "USPSTF Unhealthy Alcohol Use in Adults: Screening",
             "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions"
           },
           "links": [
@@ -38,7 +38,7 @@
           "indicator": "info",
           "detail": "This patient has recently been screened. ",
           "source": {
-            "label": "Unhealthy Alcohol Use in Adults: Screening",
+            "label": "USPSTF Unhealthy Alcohol Use in Adults: Screening",
             "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/unhealthy-alcohol-use-in-adolescents-and-adults-screening-and-behavioral-counseling-interventions"
           }
         }

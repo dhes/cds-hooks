@@ -2385,7 +2385,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent HDLc lab test available.",
+                        "value" : "- Recent HDLc lab test.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2410,7 +2410,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent waist circumference measurement available.",
+                        "value" : "- Recent waist circumference measurement.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2435,7 +2435,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent LDLc lab test available.",
+                        "value" : "- Recent LDLc lab test.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2460,7 +2460,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent diastolic blood pressure reading available.",
+                        "value" : "- Recent diastolic blood pressure reading.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2485,7 +2485,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent systolic blood pressure reading available.",
+                        "value" : "- Recent systolic blood pressure reading.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2510,7 +2510,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent fasting plasma glucose lab test available.",
+                        "value" : "- Recent fasting plasma glucose lab test.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2535,7 +2535,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent triglyceride lab test available.",
+                        "value" : "- Recent triglyceride lab test.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2560,7 +2560,7 @@
                      },
                      "then" : {
                         "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "- No recent CVD risk score available.",
+                        "value" : "- Recent CVD risk score.",
                         "type" : "Literal"
                      },
                      "else" : {
@@ -2577,26 +2577,6 @@
                   "value" : "\n",
                   "type" : "Literal"
                }
-            }
-         }, {
-            "name" : "NeedMoreInformation",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "expression" : {
-               "type" : "And",
-               "operand" : [ {
-                  "type" : "Not",
-                  "operand" : {
-                     "type" : "IsNull",
-                     "operand" : {
-                        "name" : "Information",
-                        "type" : "ExpressionRef"
-                     }
-                  }
-               }, {
-                  "name" : "InPopulation",
-                  "type" : "ExpressionRef"
-               } ]
             }
          } ]
       }
