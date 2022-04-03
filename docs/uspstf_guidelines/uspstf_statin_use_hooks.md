@@ -255,7 +255,7 @@ In this example response, the patient receives the Grade B recommendation to sta
       "indicator": "info",
       "detail": "Start low to moderate intensity lipid lowering therapy based on outcome of shared decision making between patient and provider",
       "source": {
-        "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
+        "label": "Statin Use for the Primary Prevention of CVD in Adults",
         "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
       },
       "extension": {
@@ -289,7 +289,7 @@ In this example response, the patient receives the Grade C recommendation to dis
       "indicator": "info",
       "detail": "Discuss initiation of low to moderate intensity lipid lowering therapy",
       "source": {
-        "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
+        "label": "Statin Use for the Primary Prevention of CVD in Adults",
         "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
       },
       "extension": {

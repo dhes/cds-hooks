@@ -23,7 +23,7 @@
           "indicator": "info",
           "detail": "${Recommendation}${ExclusionCriteria}",
           "source": {
-            "label": "CDS Connect: Statin Use for the Primary Prevention of CVD in Adults",
+            "label": "Statin Use for the Primary Prevention of CVD in Adults",
             "url": "https://cds.ahrq.gov/cdsconnect/artifact/statin-use-primary-prevention-cvd-adults"
           },
           "overrideReasons": [
