@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
     }
   }
   res.render('index', {
-    title: 'CDS Connect CQL Services',
+    title: 'Clinical Reminder Services',
     hooks: hooksLoader.get().all(),
     libraries: libraries,
     expressions: expressions,
