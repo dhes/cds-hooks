@@ -14,7 +14,7 @@
   "_config": {
     "cards": [
       {
-        "conditionExpression": "NeedMoreInformation",
+        "conditionExpression": "Is18YearsOrOlder",
         "card": {
           "summary": "Diet and Physical Activity for Cardiovascular Disease Prevention - More information needed to complete the assessment",
           "indicator": "warning",
