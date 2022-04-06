@@ -13,11 +13,11 @@
   "_config": {
     "cards": [
       {
-        "conditionExpression": "Notification",
+        "conditionExpression": "Recommendation",
         "card": {
           "summary": "Screening for abdominal aortic aneurysm in men who ever smoked",
           "indicator": "info",
-          "detail": "${Notification}",
+          "detail": "${Recommendation}",
           "source": {
             "label": "USPSTF Abdominal Aortic Aneurysm: Screening",
             "url": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/abdominal-aortic-aneurysm-screening"
