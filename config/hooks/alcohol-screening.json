@@ -25,7 +25,7 @@
           "links": [
             {
               "label": "Start questionnaire",
-              "url": "http://localhost:8080/launch_public_ehr.html",
+              "url": "https://asbi-screening-app.herokuapp.com/launch_public_ehr.html",
               "type": "smart"
             }
           ]
