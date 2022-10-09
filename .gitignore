@@ -35,3 +35,12 @@ npm-debug.log
 
 # vscode config
 .vscode
+
+# yarn
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
