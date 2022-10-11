@@ -15,4 +15,4 @@ Figure 1. Knowledge Levels
 
 ![Knowledge Levels](/images/KnowledgeLevels.png)
 
-ColonoscopyPolyp translates Level 1 (narrative) procedure reports and pathology reports to a Level 3 (Structured) FHIR data model. The 
+ColonoscopyPolyp translates Level 1 (narrative) procedure reports and pathology reports to a Level 3 (Structured) FHIR data model. The CQL my CQL-Testing-Framework clone translates a Level 2 (Semi-Structured) clinical practice guideline into a Level 3 (Structured) artifact. This Level 3 CQL/json artifact correctly runs the Level 3 FHIR data model and passes its test. The CDS-hook in this library has yet to be written. This process of writing a hook addresses what needs to happen if a specific locality wished to adopt this style of recording and processing colonoscopy polyp data in this structured fashion. 
