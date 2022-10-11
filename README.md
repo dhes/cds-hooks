@@ -8,11 +8,12 @@ The current status is that the hooks that I have configured function as expected
 
 In progress is a hook that decides timing of repeat colonoscopies. 
 
-We follow convensions of [Boxwala et al](https://academic.oup.com/jamia/article/18/Supplement_1/i132/797073?login=false) in discussing _knowledge levels_ in these three repositories. Figure 1 illustrates these knowledge levels: 
+We follow conventions of [Boxwala et al](https://academic.oup.com/jamia/article/18/Supplement_1/i132/797073?login=false) in discussing _knowledge levels_ in these three repositories. Figure 1 illustrates these knowledge levels: 
 
 Figure 1. Knowledge Levels
 
 
 ![Knowledge Levels](/images/KnowledgeLevels.png)
+<sub>From https://cds.ahrq.gov/cdsconnect/about (scroll down to Knowledge Levels)</sub>
 
-ColonoscopyPolyp translates Level 1 (narrative) procedure reports and pathology reports to a Level 3 (Structured) FHIR data model. The CQL my CQL-Testing-Framework clone translates a Level 2 (Semi-Structured) clinical practice guideline into a Level 3 (Structured) artifact. This Level 3 CQL/json artifact correctly runs the Level 3 FHIR data model and passes its test. The CDS-hook in this library has yet to be written. This process of writing a hook addresses what needs to happen if a specific locality wished to adopt this style of recording and processing colonoscopy polyp data in this structured fashion. 
+ColonoscopyPolyp translates Level 1 (narrative) procedure reports and pathology reports to a Level 3 (Structured) FHIR data model. The CQL my CQL-Testing-Framework clone translates a Level 2 (Semi-Structured) clinical practice guideline into a Level 3 (Structured) [_artifact_]([_artifacts_](https://artifacts.ai/what-is-an-artifact/)). This Level 3 CQL/json artifact correctly runs the Level 3 FHIR data model and passes its test. The CDS-hook in this library has yet to be written. This process of writing a hook addresses what needs to happen if a specific locality wished to adopt this style of recording and processing colonoscopy polyp data in this structured fashion. 
