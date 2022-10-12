@@ -6,7 +6,7 @@ You can read all about the CQL-SERVICES software in the OFFICIAL-README.md. In b
 
 The current status is that the hooks that I have configured function as expected and return the reminders that I expect them to return. At present these reminders address risk assessment, screening and prevention. The clinical scenario is a primary care office in the United States. 
 
-In progress is a hook that decides timing of repeat colonoscopies. 
+As of 2022-10-12 the colonoscopy-polyp is processing one test case correctly :)
 
 We follow conventions of [Boxwala et al](https://academic.oup.com/jamia/article/18/Supplement_1/i132/797073?login=false) in discussing _knowledge levels_ in these three repositories. Figure 1 illustrates these knowledge levels: 
 
