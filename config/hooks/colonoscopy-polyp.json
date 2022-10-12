@@ -16,7 +16,7 @@
 				"card": {
 					"summary": "Colonoscopy follow up",
 					"indicator": "info",
-					"detail": "${NextColonoscopyMin}, ${NextColonoscopyMax}",
+					"detail": "${NumberOfTubularAdenomas}, ${NextColonoscopyMin}, ${NextColonoscopyMax}",
 					"source": {
 						"label": "USMSTFCC follow up guidelines",
 						"url": "https://pubmed.ncbi.nlm.nih.gov/32063515/"
