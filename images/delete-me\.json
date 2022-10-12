@@ -1,0 +1,2016 @@
+
+{
+  "hookInstance": "32d0d6f9-4e98-411d-9246-56bf263862b2",
+  "hook": "patient-view",
+  "fhirServer": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data",
+  "context": {
+    "patientId": "15402",
+    "userId": "Practitioner/smart-Practitioner-71482713"
+  },
+  "fhirAuthorization": {
+    "access_token": "eyJqa3UiOiJodHRwczpcL1wvYXV0aC5sb2dpY2FoZWFsdGgub3JnXC9qd2siLCJraWQiOiJyc2ExIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiI0ODE2M2M1ZS04OGI1LTRjYjMtOTJkMy0yM2I4MDBjYWE5MjciLCJpc3MiOiJodHRwczpcL1wvYXV0aC5sb2dpY2FoZWFsdGgub3JnXC8iLCJleHAiOjE2NjU1MzU1MTYsImlhdCI6MTY2NTUzMTkxNiwianRpIjoiOTUxZGY1ZDEtODU2OS00M2YxLThmODItNjE5OWQzZWIwOGQwIn0.KUgXCjvXUI1nFoUZhilpJhj2iV5vw95pDRrML1XbpEzKnKLtfrkMtA2HxsgCgJjlDhpiNUuU8qizT9zAJCD7Slm5ARv-D9LRoNWxRPoHYF9yuYFZkt-BqK3ONuxMuTDoQiZ4zFiIi8OZGj9d_GujhW485q3TOJumhC4c3kN0NzB_jN1ihCX84blxs4BvdanWbBtDl6hBBbmCOSsT9HkEDMNmfKzpCkxC-r19Jqv8EMXlrm2RuYaNg3LM9RhqC8P4DiBKQR2qcibkORRLvfDspcMIKPr2Mw-59XQ3dSu6TXuBrX9ZU6xC33mA9l2Gdmy61yChKXZRYdCOvqLctE7-hA",
+    "token_type": "Bearer",
+    "expires_in": 3599,
+    "scope": "patient/*.* user/*.* launch openid profile online_access",
+    "subject": "48163c5e-88b5-4cb3-92d3-23b800caa927"
+  },
+  "prefetch": {
+    "Specimen": {
+      "resourceType": "Bundle",
+      "id": "680d5101-e875-47db-98f5-008818285087",
+      "meta": {
+        "lastUpdated": "2022-10-12T00:19:26.524+00:00"
+      },
+      "type": "searchset",
+      "total": 14,
+      "link": [
+        {
+          "relation": "self",
+          "url": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen?patient=15402"
+        }
+      ],
+      "entry": [
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15414",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15414",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen5\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen5&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>6 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: D. COLD SNARE X 1</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 6,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "D. COLD SNARE X 1"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15416",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15416",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen6\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen6&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: COLD BIOPSY X 5: SIGMOID COLON 1</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "COLD BIOPSY X 5: SIGMOID COLON 1"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15418",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15418",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen7\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen7&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: COLD BIOPSY X 5: SIGMOID COLON 2</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "COLD BIOPSY X 5: SIGMOID COLON 2"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15420",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15420",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen8\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen8&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: COLD BIOPSY X 5: SIGMOID COLON 3</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "COLD BIOPSY X 5: SIGMOID COLON 3"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15422",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15422",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen9\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen9&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: COLD BIOPSY X 5: SIGMOID COLON 4</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "COLD BIOPSY X 5: SIGMOID COLON 4"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15424",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15424",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen10\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen10&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: COLD BIOPSY X 5: SIGMOID COLON 5</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "COLD BIOPSY X 5: SIGMOID COLON 5"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15404",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15404",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen0\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen0&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>3 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Cecum structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#32713005)</span></td></tr></table><p><b>note</b>: A. COLD BIOPSY: CECAL POLYP</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 3,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "32713005",
+                    "display": "Cecum structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "A. COLD BIOPSY: CECAL POLYP"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15426",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15426",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen11\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen11&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Sigmoid colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#60184004)</span></td></tr></table><p><b>note</b>: COLD BIOPSY X 5: SIGMOID COLON 6</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "60184004",
+                    "display": "Sigmoid colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "COLD BIOPSY X 5: SIGMOID COLON 6"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15406",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15406",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>6 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Ascending colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#9040008)</span></td></tr></table><p><b>note</b>: B. COLD SNARE: ASCENDING COLON POLYP 1</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 6,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "9040008",
+                    "display": "Ascending colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "B. COLD SNARE: ASCENDING COLON POLYP 1"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15428",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15428",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen12\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen12&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Rectum structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#34402009)</span></td></tr></table><p><b>note</b>: E. COLD BIOPSY: RECTAL POLYP 1</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "34402009",
+                    "display": "Rectum structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "E. COLD BIOPSY: RECTAL POLYP 1"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15408",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15408",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen2\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen2&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>6 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Ascending colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#9040008)</span></td></tr></table><p><b>note</b>: B. COLD SNARE: ASCENDING COLON POLYP 2</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 6,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "9040008",
+                    "display": "Ascending colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "B. COLD SNARE: ASCENDING COLON POLYP 2"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15430",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15430",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen13\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen13&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>4 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Rectum structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#34402009)</span></td></tr></table><p><b>note</b>: E. COLD BIOPSY: RECTAL POLYP 2</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 4,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "34402009",
+                    "display": "Rectum structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "E. COLD BIOPSY: RECTAL POLYP 2"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15410",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15410",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Transverse colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#485005)</span></td></tr></table><p><b>note</b>: C. COLD SNARE: TRANSVERSE COLON POLYP 1</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 8,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "485005",
+                    "display": "Transverse colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "C. COLD SNARE: TRANSVERSE COLON POLYP 1"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Specimen/15412",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "15412",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-specimen"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Specimen</b><a name=\"example-cpSpecimen4\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Specimen &quot;example-cpSpecimen4&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-specimen.html\">Specimen (Specimen)</a></p></div><p><b>status</b>: available</p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2021-10-04 12:00:00+0000</td><td>8 mm<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code mm = 'mm')</span></td><td>Excision (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#65801008)</span></td><td>Transverse colon structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#485005)</span></td></tr></table><p><b>note</b>: C. COLD SNARE: TRANSVERSE COLON POLYP 2</p></div>"
+            },
+            "status": "available",
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "collection": {
+              "collectedDateTime": "2021-10-04T00:00:00.000Z",
+              "quantity": {
+                "value": 8,
+                "system": "http://unitsofmeasure.org",
+                "code": "mm"
+              },
+              "method": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "65801008",
+                    "display": "Excision (procedure)"
+                  }
+                ]
+              },
+              "bodySite": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "485005",
+                    "display": "Transverse colon structure (body structure)"
+                  }
+                ]
+              }
+            },
+            "note": [
+              {
+                "text": "C. COLD SNARE: TRANSVERSE COLON POLYP 2"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        }
+      ]
+    },
+    "DiagnosticReport": {
+      "resourceType": "Bundle",
+      "id": "ef2dccb6-64c8-4935-bc0c-e184f5a0e0e5",
+      "meta": {
+        "lastUpdated": "2022-10-12T00:19:28.164+00:00"
+      },
+      "type": "searchset",
+      "total": 1,
+      "link": [
+        {
+          "relation": "self",
+          "url": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/DiagnosticReport?patient=15402"
+        }
+      ],
+      "entry": [
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/DiagnosticReport/15403",
+          "resource": {
+            "resourceType": "DiagnosticReport",
+            "id": "15403",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-diagnostic-report"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DiagnosticReport</b><a name=\"example-cpDiagnosticReport\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DiagnosticReport &quot;example-cpDiagnosticReport&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-diagnostic-report.html\">DiagnosticReport</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Surgical Pathology <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-v2-0074.html\">diagnosticServiceSectionId</a>#SP)</span></p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>effective</b>: 2021-10-04 12:00:00+0000</p><p><b>issued</b>: Oct 5, 2021, 12:00:00 AM</p><p><b>specimen</b>: </p><ul><li><a href=\"#Specimen_example-cpSpecimen0\">See above (Specimen/example-cpSpecimen0: A. COLD BIOPSY: CECAL POLYP)</a></li><li><a href=\"#Specimen_example-cpSpecimen1\">See above (Specimen/example-cpSpecimen1: B. COLD SNARE: ASCENDING COLON POLYP 1)</a></li><li><a href=\"#Specimen_example-cpSpecimen2\">See above (Specimen/example-cpSpecimen2: B. COLD SNARE: ASCENDING COLON POLYP 2)</a></li><li><a href=\"#Specimen_example-cpSpecimen3\">See above (Specimen/example-cpSpecimen3: C. COLD SNARE: TRANSVERSE COLON POLYP 1)</a></li><li><a href=\"#Specimen_example-cpSpecimen4\">See above (Specimen/example-cpSpecimen4: C. COLD SNARE: TRANSVERSE COLON POLYP 2)</a></li><li><a href=\"#Specimen_example-cpSpecimen5\">See above (Specimen/example-cpSpecimen5: D. COLD SNARE X 1)</a></li><li><a href=\"#Specimen_example-cpSpecimen6\">See above (Specimen/example-cpSpecimen6: COLD BIOPSY X 5: SIGMOID COLON 1)</a></li><li><a href=\"#Specimen_example-cpSpecimen7\">See above (Specimen/example-cpSpecimen7: COLD BIOPSY X 5: SIGMOID COLON 2)</a></li><li><a href=\"#Specimen_example-cpSpecimen8\">See above (Specimen/example-cpSpecimen8: COLD BIOPSY X 5: SIGMOID COLON 3)</a></li><li><a href=\"#Specimen_example-cpSpecimen9\">See above (Specimen/example-cpSpecimen9: COLD BIOPSY X 5: SIGMOID COLON 4)</a></li><li><a href=\"#Specimen_example-cpSpecimen10\">See above (Specimen/example-cpSpecimen10: COLD BIOPSY X 5: SIGMOID COLON 5)</a></li><li><a href=\"#Specimen_example-cpSpecimen11\">See above (Specimen/example-cpSpecimen11: COLD BIOPSY X 5: SIGMOID COLON 6)</a></li><li><a href=\"#Specimen_example-cpSpecimen12\">See above (Specimen/example-cpSpecimen12: E. COLD BIOPSY: RECTAL POLYP 1)</a></li><li><a href=\"#Specimen_example-cpSpecimen13\">See above (Specimen/example-cpSpecimen13: E. COLD BIOPSY: RECTAL POLYP 2)</a></li></ul><p><b>result</b>: </p><ul><li><a href=\"#Observation_example-cpResult0\">See above (Observation/example-cpResult0: A. COLD BIOPSY: CECAL POLYP)</a></li><li><a href=\"#Observation_example-cpResult1\">See above (Observation/example-cpResult1: B. COLD SNARE: ASCENDING COLON POLYP 1)</a></li><li><a href=\"#Observation_example-cpResult2\">See above (Observation/example-cpResult2: B. COLD SNARE: ASCENDING COLON POLYP 2)</a></li><li><a href=\"#Observation_example-cpResult3\">See above (Observation/example-cpResult3: C. COLD SNARE: TRANSVERSE COLON POLYP 1)</a></li><li><a href=\"#Observation_example-cpResult4\">See above (Observation/example-cpResult4: C. COLD SNARE: TRANSVERSE COLON POLYP 2)</a></li><li><a href=\"#Observation_example-cpResult5\">See above (Observation/example-cpResult5: D. COLD SNARE X 1)</a></li><li><a href=\"#Observation_example-cpResult6\">See above (Observation/example-cpResult6: COLD BIOPSY X 5: SIGMOID COLON 1)</a></li><li><a href=\"#Observation_example-cpResult7\">See above (Observation/example-cpResult7: COLD BIOPSY X 5: SIGMOID COLON 2)</a></li><li><a href=\"#Observation_example-cpResult8\">See above (Observation/example-cpResult8: COLD BIOPSY X 5: SIGMOID COLON 3)</a></li><li><a href=\"#Observation_example-cpResult9\">See above (Observation/example-cpResult9: COLD BIOPSY X 5: SIGMOID COLON 4)</a></li><li><a href=\"#Observation_example-cpResult10\">See above (Observation/example-cpResult10: COLD BIOPSY X 5: SIGMOID COLON 5)</a></li><li><a href=\"#Observation_example-cpResult11\">See above (Observation/example-cpResult11: COLD BIOPSY X 5: SIGMOID COLON 6)</a></li><li><a href=\"#Observation_example-cpResult12\">See above (Observation/example-cpResult12: E. COLD BIOPSY: RECTAL POLYP 1)</a></li><li><a href=\"#Observation_example-cpResult13\">See above (Observation/example-cpResult13: E. COLD BIOPSY: RECTAL POLYP 2)</a></li></ul></div>"
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                    "code": "SP",
+                    "display": "Surgical Pathology"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "effectiveDateTime": "2021-10-04T00:00:00.000Z",
+            "issued": "2021-10-05T00:00:00.000Z",
+            "specimen": [
+              {
+                "reference": "Specimen/15404",
+                "display": "A. COLD BIOPSY: CECAL POLYP"
+              },
+              {
+                "reference": "Specimen/15406",
+                "display": "B. COLD SNARE: ASCENDING COLON POLYP 1"
+              },
+              {
+                "reference": "Specimen/15408",
+                "display": "B. COLD SNARE: ASCENDING COLON POLYP 2"
+              },
+              {
+                "reference": "Specimen/15410",
+                "display": "C. COLD SNARE: TRANSVERSE COLON POLYP 1"
+              },
+              {
+                "reference": "Specimen/15412",
+                "display": "C. COLD SNARE: TRANSVERSE COLON POLYP 2"
+              },
+              {
+                "reference": "Specimen/15414",
+                "display": "D. COLD SNARE X 1"
+              },
+              {
+                "reference": "Specimen/15416",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 1"
+              },
+              {
+                "reference": "Specimen/15418",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 2"
+              },
+              {
+                "reference": "Specimen/15420",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 3"
+              },
+              {
+                "reference": "Specimen/15422",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 4"
+              },
+              {
+                "reference": "Specimen/15424",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 5"
+              },
+              {
+                "reference": "Specimen/15426",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 6"
+              },
+              {
+                "reference": "Specimen/15428",
+                "display": "E. COLD BIOPSY: RECTAL POLYP 1"
+              },
+              {
+                "reference": "Specimen/15430",
+                "display": "E. COLD BIOPSY: RECTAL POLYP 2"
+              }
+            ],
+            "result": [
+              {
+                "reference": "Observation/15405",
+                "display": "A. COLD BIOPSY: CECAL POLYP"
+              },
+              {
+                "reference": "Observation/15407",
+                "display": "B. COLD SNARE: ASCENDING COLON POLYP 1"
+              },
+              {
+                "reference": "Observation/15409",
+                "display": "B. COLD SNARE: ASCENDING COLON POLYP 2"
+              },
+              {
+                "reference": "Observation/15411",
+                "display": "C. COLD SNARE: TRANSVERSE COLON POLYP 1"
+              },
+              {
+                "reference": "Observation/15413",
+                "display": "C. COLD SNARE: TRANSVERSE COLON POLYP 2"
+              },
+              {
+                "reference": "Observation/15415",
+                "display": "D. COLD SNARE X 1"
+              },
+              {
+                "reference": "Observation/15417",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 1"
+              },
+              {
+                "reference": "Observation/15419",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 2"
+              },
+              {
+                "reference": "Observation/15421",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 3"
+              },
+              {
+                "reference": "Observation/15423",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 4"
+              },
+              {
+                "reference": "Observation/15425",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 5"
+              },
+              {
+                "reference": "Observation/15427",
+                "display": "COLD BIOPSY X 5: SIGMOID COLON 6"
+              },
+              {
+                "reference": "Observation/15429",
+                "display": "E. COLD BIOPSY: RECTAL POLYP 1"
+              },
+              {
+                "reference": "Observation/15431",
+                "display": "E. COLD BIOPSY: RECTAL POLYP 2"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        }
+      ]
+    },
+    "Patient": {
+      "resourceType": "Patient",
+      "id": "15402",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+        "source": "#3tM3xn3TvOrIi2SO",
+        "profile": [
+          "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-patient"
+        ]
+      },
+      "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Patient</b><a name=\"example-cpPatient\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Patient &quot;example-cpPatient&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-patient.html\">Patient (Patient)</a></p></div><p><b>US Core Birth Sex Extension</b>: M</p><p><b>identifier</b>: id: 1325364</p><p><b>name</b>: Ferd Berfel </p><p><b>gender</b>: male</p><p><b>birthDate</b>: 1987-02-03</p></div>"
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+          "valueCode": "M"
+        }
+      ],
+      "identifier": [
+        {
+          "system": "http://example.com",
+          "value": "1325364"
+        }
+      ],
+      "name": [
+        {
+          "family": "Berfel",
+          "given": [
+            "Ferd"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1987-02-03"
+    },
+    "Observation": {
+      "resourceType": "Bundle",
+      "id": "e2a6d8bb-7592-44a2-8bab-c683af1b42b2",
+      "meta": {
+        "lastUpdated": "2022-10-12T00:19:28.510+00:00"
+      },
+      "type": "searchset",
+      "total": 18,
+      "link": [
+        {
+          "relation": "self",
+          "url": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation?patient=15402"
+        }
+      ],
+      "entry": [
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15409",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15409",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult2\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult2&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen2\">See above (Specimen/example-cpSpecimen2: B. COLD SNARE: ASCENDING COLON POLYP 2)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15408",
+              "display": "B. COLD SNARE: ASCENDING COLON POLYP 2"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15407",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15407",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen1\">See above (Specimen/example-cpSpecimen1: B. COLD SNARE: ASCENDING COLON POLYP 1)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15406",
+              "display": "B. COLD SNARE: ASCENDING COLON POLYP 1"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15429",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15429",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult12\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult12&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen12\">See above (Specimen/example-cpSpecimen12: E. COLD BIOPSY: RECTAL POLYP 1)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15428",
+              "display": "E. COLD BIOPSY: RECTAL POLYP 1"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15405",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15405",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult0\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult0&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen0\">See above (Specimen/example-cpSpecimen0: A. Ascending colon polyp cold snare)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15404",
+              "display": "A. Ascending colon polyp cold snare"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15427",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15427",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult11\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult11&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen11\">See above (Specimen/example-cpSpecimen11: COLD BIOPSY X 5: SIGMOID COLON 6)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-hyperplastic-polyp\">See above (Observation/example-cpPathology-hyperplastic-polyp: Hyperplastic polyp of intestine (disorder))</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15426",
+              "display": "COLD BIOPSY X 5: SIGMOID COLON 6"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15433",
+                "display": "Hyperplastic polyp of intestine (disorder)"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15425",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15425",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult10\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult10&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen10\">See above (Specimen/example-cpSpecimen10: COLD BIOPSY X 5: SIGMOID COLON 5)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15424",
+              "display": "COLD BIOPSY X 5: SIGMOID COLON 5"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15423",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15423",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult9\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult9&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen9\">See above (Specimen/example-cpSpecimen9: COLD BIOPSY X 5: SIGMOID COLON 4)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15422",
+              "display": "COLD BIOPSY X 5: SIGMOID COLON 4"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15421",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15421",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult8\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult8&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen8\">See above (Specimen/example-cpSpecimen8: COLD BIOPSY X 5: SIGMOID COLON 3)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15420",
+              "display": "COLD BIOPSY X 5: SIGMOID COLON 3"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15419",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15419",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult7\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult7&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen7\">See above (Specimen/example-cpSpecimen7: COLD BIOPSY X 5: SIGMOID COLON 2)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15418",
+              "display": "COLD BIOPSY X 5: SIGMOID COLON 2"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15417",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15417",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult6\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult6&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen6\">See above (Specimen/example-cpSpecimen6: COLD BIOPSY X 5: SIGMOID COLON 1)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15416",
+              "display": "COLD BIOPSY X 5: SIGMOID COLON 1"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15415",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15415",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult5\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult5&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen5\">See above (Specimen/example-cpSpecimen5: D. COLD SNARE X 1)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15414",
+              "display": "D. COLD SNARE X 1"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15413",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15413",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult4\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult4&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen4\">See above (Specimen/example-cpSpecimen4: C. COLD SNARE: TRANSVERSE COLON POLYP 2)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15412",
+              "display": "C. COLD SNARE: TRANSVERSE COLON POLYP 2"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15435",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15435",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-no-malignant-neoplasm"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpNoMalignantNeoplasm-true\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpNoMalignantNeoplasm-true&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-no-malignant-neoplasm.html\">No Malignant Neoplasm (Observation)</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: No evidence of malignant neoplasm (finding) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#110396000)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>value</b>: true</p></div>"
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "110396000",
+                  "display": "No evidence of malignant neoplasm (finding)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "valueBoolean": true
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15411",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15411",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen3\">See above (Specimen/example-cpSpecimen3: C. COLD SNARE: TRANSVERSE COLON POLYP 1)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-tubular-adenoma\">See above (Observation/example-cpPathology-tubular-adenoma: Tubular adenoma of colon)</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15410",
+              "display": "C. COLD SNARE: TRANSVERSE COLON POLYP 1"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15432",
+                "display": "Tubular adenoma of colon"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15433",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15433",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-pathology"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpPathology-hyperplastic-polyp\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpPathology-hyperplastic-polyp&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-pathology.html\">Histopathology (Observation)</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Pathology report final diagnosis <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#34574-4)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>value</b>: Hyperplastic polyp of intestine (disorder) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#89452002)</span></p></div>"
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "34574-4",
+                  "display": "Pathology report final diagnosis"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "89452002",
+                  "display": "Hyperplastic polyp of intestine (disorder)"
+                }
+              ]
+            }
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15434",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15434",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-dysplasia"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpDysplasia-false\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpDysplasia-false&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-dysplasia.html\">Dysplasia (Observation)</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Severe dysplasia (morphologic abnormality) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#55237006)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>value</b>: false</p></div>"
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "55237006",
+                  "display": "Severe dysplasia (morphologic abnormality)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "valueBoolean": false
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15431",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15431",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-result"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpResult13\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpResult13&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-result.html\">Result (Observation)</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Polyp from large intestine obtained by polypectomy (specimen) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#122645001)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>specimen</b>: <a href=\"#Specimen_example-cpSpecimen13\">See above (Specimen/example-cpSpecimen13: E. COLD BIOPSY: RECTAL POLYP 2)</a></p><p><b>hasMember</b>: </p><ul><li><a href=\"#Observation_example-cpPathology-hyperplastic-polyp\">See above (Observation/example-cpPathology-hyperplastic-polyp: Hyperplastic polyp of intestine (disorder))</a></li><li><a href=\"#Observation_example-cpDysplasia-false\">See above (Observation/example-cpDysplasia-false: Severe dysplasia false)</a></li><li><a href=\"#Observation_example-cpNoMalignantNeoplasm-true\">See above (Observation/example-cpNoMalignantNeoplasm-true: No evidence of malignant neoplasm true)</a></li></ul></div>"
+            },
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "122645001",
+                  "display": "Polyp from large intestine obtained by polypectomy (specimen)"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "specimen": {
+              "reference": "Specimen/15430",
+              "display": "E. COLD BIOPSY: RECTAL POLYP 2"
+            },
+            "hasMember": [
+              {
+                "reference": "Observation/15433",
+                "display": "Hyperplastic polyp of intestine (disorder)"
+              },
+              {
+                "reference": "Observation/15434",
+                "display": "Severe dysplasia false"
+              },
+              {
+                "reference": "Observation/15435",
+                "display": "No evidence of malignant neoplasm true"
+              }
+            ]
+          },
+          "search": {
+            "mode": "match"
+          }
+        },
+        {
+          "fullUrl": "https://api.logicahealth.org/DansCDSHooksAPIGuide/data/Observation/15432",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "15432",
+            "meta": {
+              "versionId": "1",
+              "lastUpdated": "2022-10-11T22:24:39.000+00:00",
+              "source": "#3tM3xn3TvOrIi2SO",
+              "profile": [
+                "https://build.fhir.org/ig/dhes/ColonoscopyPolyp/StructureDefinition/cp-pathology"
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"example-cpPathology-tubular-adenoma\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;example-cpPathology-tubular-adenoma&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-cp-pathology.html\">Histopathology (Observation)</a></p></div><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/4.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#laboratory)</span></p><p><b>code</b>: Pathology report final diagnosis <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#34574-4)</span></p><p><b>subject</b>: <a href=\"#Patient_example-cpPatient\">See above (Patient/example-cpPatient)</a></p><p><b>value</b>: Tubular adenoma (disorder) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#444408007)</span></p></div>"
+            },
+            "status": "final",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "34574-4",
+                  "display": "Pathology report final diagnosis"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/15402"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "444408007",
+                  "display": "Tubular adenoma (disorder)"
+                }
+              ]
+            }
+          },
+          "search": {
+            "mode": "match"
+          }
+        }
+      ]
+    }
+  }
+}

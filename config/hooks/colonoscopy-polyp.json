@@ -1,0 +1,34 @@
+{
+	"id": "colonoscopy-polyp",
+	"hook": "patient-view",
+	"title": "Timing of follow up colonoscopy",
+	"description": "Hooks Implementation of US Multi-Society Task Force on Colorectal Cancer colonoscopy follow up guidelines",
+	"prefetch": {
+		"Patient": "Patient/{{context.patientId}}",
+		"DiagnosticReport": "DiagnosticReport?patient={{context.patientId}}",
+		"Specimen": "Specimen?patient={{context.patientId}}",
+		"Observation": "Observation?patient={{context.patientId}}"
+	},
+	"_config": {
+		"cards": [
+			{
+				"conditionExpression": "NextColonoscopyInterval",
+				"card": {
+					"summary": "Colonoscopy follow up",
+					"indicator": "info",
+					"detail": "${NextColonoscopyMin}, ${NextColonoscopyMax}",
+					"source": {
+						"label": "USMSTFCC follow up guidelines",
+						"url": "https://pubmed.ncbi.nlm.nih.gov/32063515/"
+					}
+				}
+			}
+		],
+		"cql": {
+			"library": {
+				"id": "Colonoscopy_Next_Surveillance_R401",
+				"version": "0.0.1"
+			}
+		}
+	}
+}
