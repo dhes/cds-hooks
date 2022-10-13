@@ -12,11 +12,11 @@
 	"_config": {
 		"cards": [
 			{
-				"conditionExpression": "NextColonoscopyInterval",
+				"conditionExpression": "RecommendationSimpleEnglish",
 				"card": {
 					"summary": "Colonoscopy follow up",
 					"indicator": "info",
-					"detail": "From ${NextColonoscopyMin} year(s) to ${NextColonoscopyMax} year(s).",
+					"detail": "${RecommendationSimpleEnglish}",
 					"source": {
 						"label": "USMSTFCC follow up guidelines",
 						"url": "https://pubmed.ncbi.nlm.nih.gov/32063515/"
