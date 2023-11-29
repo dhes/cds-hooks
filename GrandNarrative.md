@@ -11,10 +11,25 @@ This project brings together cql code from eight clinical reminders. Please keep
 |CVD Prevention|CDS Connect: Healthy Diet and Physical Activity for CVD Prevention||https://cds.ahrq.gov/sites/default/files/cds/artifact/logic/2023-08/USPSTFDietAndActivityForCVDPreventionInAdultsFHIRv401_v2.1.0_CQL.zip|https://cds.ahrq.gov/cdsconnect/artifact/healthy-diet-and-physical-activity-cvd-prevention-adults-cardiovascular-risk|
 |Diabetes Screening|me|diabetes-screening|||
 |Diabetes Screening CDS Connect|CDS Connect:Prediabetes and Type 2 Diabetes: Part One, Screening||https://cds.ahrq.gov/sites/default/files/cds/artifact/logic/2023-08/USPSTFPrediabetesAndType2DiabetesPart1ScreeningFHIRv401_v2.1.0_CQL.zip|https://cds.ahrq.gov/cdsconnect/artifact/prediabetes-and-type-2-diabetes-part-one-screening|
-|Colonoscopy Surveillance|me|ColonoscopyPolyp|||
+|Colonoscopy Surveillance|me|CQL-testing-framework|||
+
+Then there's ColonoscopyPolyp which is the IG for "CQL-testing-framework" (the badly named coloscoyp survellance test suite). 
 
 I have two entries for diabetes screening because I seem to have my own version of diabetes-screening and I'm not sure how much it reflects the CDS Connect version. I actually have two personal repositories named diabetes-screening and diabetes-screening-cds-connect. 
 
 All of this fits within a broader implementation strategy championed by the American Cancer Society's [Closing Gaps in Cancer Screening](https://prescancerpanel.cancer.gov/report/cancerscreening/Part2Goal4.html). This President's Cancer Panel document outlines a multi-stakeholder strategy for broader adoption of CDS technology for *cancer* screening*. I plan to extend  the spirit of this report to screening in general. Thus from the example listed above I will focus all of those that have 'screening' in the title, plus *ASCVD Risk Assessment* because it is actually screening for high ASCVD risk. 
 
+Which of these has a working test suite? 
 
+| Rule | # test cases | runs? | all pass?| IG drafted?
+|---|---|---|---|---|
+|AAA Screening|16|yes|yes|yes|(repository opened)|
+|Alcohol Screening|51|yes|no|no|
+|ASCVD Risk Assessment|2|no||no|
+|Colon Cancer Screening|16|no||no|
+|CVD Prevention|194|no||no|
+|Diabetes Screening|no|||no|
+|Diabetes Screening CDS Connect|no|||no|
+|Colonoscopy Surveillance|6|yes|no|no|
+
+Please note that the repository that holds the ColonoscopyPolyp tests is called CQL-testing framework. Sorry.
