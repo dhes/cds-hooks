@@ -13,7 +13,7 @@ This project brings together cql code from eight clinical reminders. Please keep
 |Diabetes Screening CDS Connect|CDS Connect:Prediabetes and Type 2 Diabetes: Part One, Screening||https://cds.ahrq.gov/sites/default/files/cds/artifact/logic/2023-08/USPSTFPrediabetesAndType2DiabetesPart1ScreeningFHIRv401_v2.1.0_CQL.zip|https://cds.ahrq.gov/cdsconnect/artifact/prediabetes-and-type-2-diabetes-part-one-screening|
 |Colonoscopy Surveillance|me|CQL-testing-framework|||
 
-Then there's ColonoscopyPolyp which is the IG for "CQL-testing-framework" (the badly named coloscoyp survellance test suite). 
+Then there's ColonoscopyPolyp which is the IG for "CQL-testing-framework" (the badly named coloscoyp surveillance test suite). 
 
 I have two entries for diabetes screening because I seem to have my own version of diabetes-screening and I'm not sure how much it reflects the CDS Connect version. I actually have two personal repositories named diabetes-screening and diabetes-screening-cds-connect. 
 
@@ -21,15 +21,15 @@ All of this fits within a broader implementation strategy championed by the Amer
 
 Which of these has a working test suite? 
 
-| Rule | # test cases | runs? | all pass?| IG drafted?
+| Rule |# test cases|runs?|all pass?|IG status|
 |---|---|---|---|---|
-|AAA Screening|16|yes|yes|yes|(repository opened)|
-|Alcohol Screening|51|yes|no|no|
-|ASCVD Risk Assessment|2|no||no|
-|Colon Cancer Screening|16|no||no|
-|CVD Prevention|194|no||no|
-|Diabetes Screening|no|||no|
-|Diabetes Screening CDS Connect|no|||no|
-|Colonoscopy Surveillance|6|yes|no|no|
+|AAA Screening|16|yes|yes|repository created|
+|Alcohol Screening|51|yes|no|nothing yet|
+|ASCVD Risk Assessment|2|no||nothing yet|
+|Colon Cancer Screening|16|no||nothing yet|
+|CVD Prevention|194|no||nothing yet|
+|Diabetes Screening|17|no||nothing yet|
+|Diabetes Screening CDS Connect|1194|no||nothing yet|
+|Colonoscopy Surveillance|6|yes|no|detailed draft|
 
 Please note that the repository that holds the ColonoscopyPolyp tests is called CQL-testing framework. Sorry.
